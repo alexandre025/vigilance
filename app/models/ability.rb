@@ -31,6 +31,7 @@ class Ability
 
     user ||= User.new
 
+    can :create, Organization
     can :read, Organization, assignments: {user_id: user.id}
     can :manage, Organization, assignments: {user_id: user.id, is_admin: true}
 
