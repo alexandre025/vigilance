@@ -2,6 +2,6 @@ class Organization < ApplicationRecord
 
   has_many :tags
 
-  belongs_to :admin, class_name: 'User'
+  has_many :users, through: :assignments
 
 end

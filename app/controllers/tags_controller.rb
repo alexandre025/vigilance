@@ -1,5 +1,8 @@
 class TagsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization
 
   # GET /tags
   # GET /tags.json
@@ -25,10 +28,11 @@ class TagsController < ApplicationController
   # POST /tags.json
   def create
     @tag = Tag.new(tag_params)
+    @tag.organization = @organization
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
+        format.html { redirect_to [@organization,@tag], notice: 'Tag was successfully created.' }
         format.json { render :show, status: :created, location: @tag }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class TagsController < ApplicationController
   def update
     respond_to do |format|
       if @tag.update(tag_params)
-        format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
+        format.html { redirect_to [@organization,@tag], notice: 'Tag was successfully updated.' }
         format.json { render :show, status: :ok, location: @tag }
       else
         format.html { render :edit }
@@ -56,12 +60,16 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to organization_tags_url, notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_organization
+      @organization = Organization.find(params[:organization_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
       @tag = Tag.find(params[:id])
