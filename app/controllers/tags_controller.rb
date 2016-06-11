@@ -2,8 +2,6 @@ class TagsController < ApplicationController
   load_and_authorize_resource :organization
   load_and_authorize_resource :tag, through: :organization
 
-  before_action :authenticate_user!
-
   # GET /tags
   # GET /tags.json
   def index

@@ -1,8 +1,6 @@
 class OrganizationsController < ApplicationController
   load_and_authorize_resource :organization
 
-  before_action :authenticate_user!
-
   # GET /organizations
   # GET /organizations.json
   def index
