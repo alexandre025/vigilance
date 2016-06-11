@@ -5,5 +5,5 @@
   <%= @organization.name %>
 </p>
 
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Edit', edit_organization_path(@organization) if can? :update, @organization %> |
 <%= link_to 'Back', organizations_path %>

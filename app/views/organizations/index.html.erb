@@ -4,24 +4,26 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @organizations.each do |organization| %>
+  <% @organizations.each do |organization| %>
       <tr>
         <td><%= organization.name %></td>
         <td><%= link_to 'Show', organization %></td>
-        <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-        <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :manage, organization %>
+            <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+            <td><%= link_to 'Destroy', organization, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Organization', new_organization_path %>
+<%= link_to 'New Organization', new_organization_path if can? :create, Organization %>
