@@ -35,7 +35,7 @@ class Ability
     can :read, Organization, assignments: {user_id: user.id}
     can :manage, Organization, assignments: {user_id: user.id, is_admin: true}
 
-    can :read, Tag, organization: {assignements: {user_id: user.id}}
-    can :manage, Tag, organization: {assignements: {user_id: user.id, is_admin: true}}
+    can :read, Tag, organization: {assignments: {user_id: user.id}}
+    can :manage, Tag, organization: {assignments: {user_id: user.id, is_admin: true}}
   end
 end
