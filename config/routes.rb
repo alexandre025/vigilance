@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'home#index'
+
+  devise_for :users
+
+  resources :organizations do
+    resources :tags
+  end
 
 end
