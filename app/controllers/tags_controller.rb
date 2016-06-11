@@ -9,7 +9,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags = Tag.by_organization(@organization)
   end
 
   # GET /tags/1
