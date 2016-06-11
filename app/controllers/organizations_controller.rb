@@ -1,4 +1,6 @@
 class OrganizationsController < ApplicationController
+  load_and_authorize_resource :organization
+
   before_action :authenticate_user!
 
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
