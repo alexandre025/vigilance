@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :organizations do
     resources :tags
+    resources :contents
   end
 
 end

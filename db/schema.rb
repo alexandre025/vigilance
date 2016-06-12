@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160612090625) do
+ActiveRecord::Schema.define(version: 20160612101354) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20160612090625) do
     t.datetime "updated_at",      null: false
     t.index ["organization_id"], name: "index_assignments_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_assignments_on_user_id", using: :btree
+  end
+
+  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "description",     limit: 65535
+    t.text     "comment",         limit: 65535
+    t.string   "source"
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["organization_id"], name: "index_contents_on_organization_id", using: :btree
+    t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :assignments
   has_many :organizations, through: :assignments
 
+  has_many :contents
+
 end
