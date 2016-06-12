@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).on("page:change", function(){
     $.material.init();
 });
+
+
+
+
