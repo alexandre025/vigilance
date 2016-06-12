@@ -7,5 +7,5 @@
   <%= @tag.name %>
 </p>
 
-<%= link_to 'Edit', edit_organization_tag_path(@tag) if can? :update, @tag %> |
+<%= link_to 'Edit', edit_organization_tag_path(@organization,@tag) if can? :update, @tag %> |
 <%= link_to 'Back', organization_tags_path %>

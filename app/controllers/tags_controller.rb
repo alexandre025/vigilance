@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  load_and_authorize_resource :organization
+  load_and_authorize_resource :organization, find_by: :slug
   load_and_authorize_resource :tag, through: :organization
 
   # GET /tags

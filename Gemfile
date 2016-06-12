@@ -47,3 +47,4 @@ end
 
 gem 'devise'
 gem 'cancancan'
+gem 'friendly_id', '~> 5.1.0'

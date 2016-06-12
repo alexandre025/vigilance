@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  load_and_authorize_resource :organization
+  load_and_authorize_resource :organization, find_by: :slug
 
   # GET /organizations
   # GET /organizations.json

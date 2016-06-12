@@ -1,4 +1,6 @@
 class Organization < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   has_many :tags
   accepts_nested_attributes_for :tags
