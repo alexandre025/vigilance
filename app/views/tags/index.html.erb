@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% content_for :header do %>
+    <%= render partial: 'shared/header', locals: {current: :tags} %>
+<% end %>
 <h1>Tags</h1>
 
 <table>
