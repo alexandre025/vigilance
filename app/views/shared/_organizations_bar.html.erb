@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+
+    <div id="sidebar" class="col-sm-3 col-md-2 hidden-xs sidebar">
+      <% current_user.organizations.each do |o| %>
+          <%= link_to o.name, organization_path(o) %>
+      <% end %>
+    </div>
+
+<% end %>

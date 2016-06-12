@@ -14,11 +14,10 @@ class ApplicationController < ActionController::Base
   def token_authenticate
     return if (token = params[:auth_token]).blank?
 
-    if(user = User.find_by_auth_token(token))
+    if (user = User.find_by_auth_token(token))
       sign_in(user)
     else
     end
-    byebug
     redirect_to url_for(params.except(:auth_token).permit!)
   end
 end
