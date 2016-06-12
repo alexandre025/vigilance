@@ -8,6 +8,8 @@ class Organization < ApplicationRecord
   has_many :assignments
   has_many :users, through: :assignments
 
+  has_many :contents
+
   scope :by_assignments, -> (current_user) {
     joins(:assignments).where(assignments: {user_id: current_user.id})
   }

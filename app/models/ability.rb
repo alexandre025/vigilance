@@ -37,5 +37,9 @@ class Ability
 
     can :read, Tag, organization: {assignments: {user_id: user.id}}
     can :manage, Tag, organization: {assignments: {user_id: user.id, is_admin: true}}
+
+    can [:create, :read], Content, organization: {assignments: {user_id: user.id}}
+    can :manage, Content, user_id: user.id
+    can :manage, Content, organization: {assignments: {user_id: user.id, is_admin: true}}
   end
 end

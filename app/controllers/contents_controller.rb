@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :organization, find_by: :slug
+  load_and_authorize_resource :content, through: :organization
 
   # GET /contents
   # GET /contents.json
@@ -62,11 +63,6 @@ class ContentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_content
-      @content = Content.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
       params.fetch(:content, {})
