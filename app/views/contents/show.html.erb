@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% content_for :header do %>
+    <%= render partial: 'shared/header', locals: {current: nil} %>
+<% end %>
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<%= link_to 'Edit', edit_organizations_contents_path(@organization,@content) %> |
+<%= link_to 'Back', organizations_contents_path(@organization) %>

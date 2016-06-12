@@ -1,6 +1,10 @@
+<% content_for :header do %>
+    <%= render partial: 'shared/header', locals: {current: nil} %>
+<% end %>
+
 <h1>Editing Content</h1>
 
 <%= render 'form', content: @content %>
 
-<%= link_to 'Show', @content %> |
-<%= link_to 'Back', contents_path %>
+<%= link_to 'Show', organization_content_path(@organization,@content) %> |
+<%= link_to 'Back', organization_contents_path(@organization) %>
