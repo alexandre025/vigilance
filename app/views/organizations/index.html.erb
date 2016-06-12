@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% content_for :header do %>
+    <%= render partial: 'shared/header', locals: {current: :organizations} %>
+<% end %>
 
 <h1>Organizations</h1>
 

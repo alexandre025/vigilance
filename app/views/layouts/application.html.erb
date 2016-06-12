@@ -8,7 +8,7 @@
 </head>
 <body id="<%= "#{controller_name}_#{action_name}" %>">
 
-<%= render partial: 'shared/header' %>
+<%= yield :header %>
 <div class="container">
   <%= render partial: 'shared/notifications' %>
   <%= yield %>
