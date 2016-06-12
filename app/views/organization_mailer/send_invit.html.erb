@@ -1,0 +1,8 @@
+<h1>Hi !<%= @user.email %></h1>
+<p>
+  You are invited to <%= @assignment.organization.name %> by following this link :<br>
+</p>
+<p>
+  <%= link_to "Join #{@assignment.organization.name}", @url %>
+</p>
+<p>Thanks you and have a great day!</p>

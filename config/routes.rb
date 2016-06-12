@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   }
 
   resources :organizations do
+    get '/invit', to: 'organizations#invit'
+    post '/invit', to: 'organizations#send_invit'
+    get '/join', to: 'organizations#join'
     resources :tags
     resources :contents
   end

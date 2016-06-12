@@ -11,7 +11,7 @@ class Organization < ApplicationRecord
   has_many :contents
 
   scope :by_assignments, -> (current_user) {
-    joins(:assignments).where(assignments: {user_id: current_user.id})
+    joins(:assignments).where(assignments: {user_id: current_user.id, is_active: true})
   }
 
 end

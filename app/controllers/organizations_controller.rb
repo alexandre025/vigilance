@@ -1,6 +1,8 @@
 class OrganizationsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
 
+  before_action :set_organization, only: [:invit, :send_invit]
+
   # GET /organizations
   # GET /organizations.json
   def index
@@ -25,7 +27,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations.json
   def create
     @organization = Organization.new(organization_params)
-    @organization.assignments << Assignment.new({user: current_user, organization: @organization, is_admin: true})
+    @organization.assignments << Assignment.new({user: current_user, organization: @organization, is_admin: true, is_active: true})
 
     respond_to do |format|
       if @organization.save
@@ -62,9 +64,44 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def organization_params
-      params.require(:organization).permit(:name)
+  def invit
+
+  end
+
+  def send_invit
+    if user = User.find_by_email(params[:email])
+      if user.organizations.include? @organization
+        render json: '', status: 200, notice: 'Already in'
+      else
+        user.new_token!
+        assignment = Assignment.new(organization: @organization, user: user, is_active: false, is_admin: false)
+        assignment.save!
+        assignment.new_token!
+        OrganizationMailer.send_invit(assignment).deliver_now
+        render json: '', status: 200, notice: 'Invitation sent'
+      end
+    else
+      render json: '', status: 404, alert: 'User not found'
     end
+  end
+
+  def join
+    byebug
+    if assignment = Assignment.find_by(assignment_token: params[:assignment_token])
+      assignment.activate!
+      redirect_to organization_path(assignment.organization), notice: "You succefully joined #{assignment.organization.name}"
+    else
+      redirect_to organizations_path, alert: 'Error'
+    end
+  end
+
+  private
+  def set_organization
+    @organization = Organization.find_by_slug(params[:organization_id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def organization_params
+    params.require(:organization).permit(:name)
+  end
 end

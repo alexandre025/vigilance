@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
 
   has_many :contents
 
+  def new_token!
+    SecureRandom.hex(16).tap do |random_token|
+      update_attributes auth_token: random_token
+    end
+  end
+
 end

@@ -32,14 +32,16 @@ class Ability
     user ||= User.new
 
     can :create, Organization
-    can :read, Organization, assignments: {user_id: user.id}
-    can :manage, Organization, assignments: {user_id: user.id, is_admin: true}
+    can :read, Organization, assignments: {user_id: user.id, is_active: true}
+    can :manage, Organization, assignments: {user_id: user.id, is_admin: true, is_active: true}
 
-    can :read, Tag, organization: {assignments: {user_id: user.id}}
-    can :manage, Tag, organization: {assignments: {user_id: user.id, is_admin: true}}
+    #can :update, Assignment, assignments: {user_id: user.id, is_active: false}
 
-    can [:create, :read], Content, organization: {assignments: {user_id: user.id}}
+    can :read, Tag, organization: {assignments: {user_id: user.id, is_active: true}}
+    can :manage, Tag, organization: {assignments: {user_id: user.id, is_admin: true, is_active: true}}
+
+    can [:create, :read], Content, organization: {assignments: {user_id: user.id, is_active: true}}
     can :manage, Content, user_id: user.id
-    can :manage, Content, organization: {assignments: {user_id: user.id, is_admin: true}}
+    can :manage, Content, organization: {assignments: {user_id: user.id, is_admin: true, is_active: true}}
   end
 end
