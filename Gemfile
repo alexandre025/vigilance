@@ -48,3 +48,4 @@ end
 gem 'devise'
 gem 'cancancan'
 gem 'friendly_id', '~> 5.1.0'
+gem 'select2-rails'
