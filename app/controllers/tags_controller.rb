@@ -30,10 +30,10 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to [@organization, @tag], notice: 'Tag was successfully created.' }
+        format.html { redirect_to edit_organization_path(@organization), notice: 'Tag was successfully created.' }
         format.json { render :show, status: :created, location: @tag }
       else
-        format.html { render :new }
+        format.html { redirect_to edit_organization_path(@organization) }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +58,7 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to organization_tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to edit_organization_path(@organization), notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

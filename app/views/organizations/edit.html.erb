@@ -6,11 +6,24 @@
 
 <%= render 'form', organization: @organization %>
 
+<h1>Editing tags</h1>
+
+<% @organization.tags.each do |t| %>
+    <span class="organization-tag tag">
+      <%= t.name %>
+      <%= link_to 'Destroy', organization_tag_path(@organization, t), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </span>
+<% end %>
+
+<%= render 'tags/form', tag: Tag.new %>
+
 <h1>Editing Users</h1>
 
 <% @organization.assignments.each do |a| %>
-    <%= a.user.email %>
-    <%= link_to 'Destroy', organization_delete_assignment_path(@organization,a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
+    <span class="organization-user tag">
+      <%= a.user.email %>
+      <%= link_to 'Destroy', organization_delete_assignment_path(@organization, a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
+    </span>
 <% end %>
 
 <%= form_tag organization_invit_path(@organization), method: :post do %>
