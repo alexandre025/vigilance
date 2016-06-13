@@ -2,10 +2,9 @@
     <%= render partial: 'shared/header', locals: {current: :tags} %>
 <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+<h2><%= "#{@organization.name} > #{@tag.name}" %></h2>
+
+<%= render partial: 'shared/contents', locals: {contents: @tag.contents} %>
 
 <%= link_to 'Edit', edit_organization_tag_path(@organization,@tag) if can? :update, @tag %> |
-<%= link_to 'Back', organization_tags_path %>
+<%= link_to 'Back', organization_tags_path(@organization) %>

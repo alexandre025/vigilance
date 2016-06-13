@@ -35,7 +35,8 @@ class Ability
     can :read, Organization, assignments: {user_id: user.id, is_active: true}
     can :manage, Organization, assignments: {user_id: user.id, is_admin: true, is_active: true}
 
-    #can :update, Assignment, assignments: {user_id: user.id, is_active: false}
+    can :update, Assignment, assignments: {user_id: user.id, is_active: false}
+    can :manage, Assignment, assignments: {user_id: user.id, is_admin: true, is_active: true}
 
     can :read, Tag, organization: {assignments: {user_id: user.id, is_active: true}}
     can :manage, Tag, organization: {assignments: {user_id: user.id, is_admin: true, is_active: true}}

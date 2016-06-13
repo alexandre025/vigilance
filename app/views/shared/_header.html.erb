@@ -5,12 +5,7 @@
 
   <ul class="nav navbar-left">
     <% if user_signed_in? %>
-        <%= content_tag :li, (link_to t(:organizations), organizations_path), class: ('active' if current == :organizations) %>
-        <% if @organization.try(:id) %>
-            <%= content_tag :li, (link_to t(:tags), organization_tags_path(@organization)), class: ('active' if current == :tags) %></li>
-        <% else %>
 
-        <% end %>
     <% end %>
   </ul>
 

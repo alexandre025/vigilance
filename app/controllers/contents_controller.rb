@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    @contents = Content.by_organization(@organization)
   end
 
   # GET /contents/1
@@ -27,9 +27,12 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
 
+    @content.organization = @organization
+    @content.user = current_user
+
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to organization_content_path(@organization, @content), notice: 'Content was successfully created.' }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new }
@@ -43,7 +46,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to organization_content_path(@organization, @content), notice: 'Content was successfully updated.' }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }
@@ -57,14 +60,14 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     respond_to do |format|
-      format.html { redirect_to contents_url, notice: 'Content was successfully destroyed.' }
+      format.html { redirect_to organization_contents_url(@organization), notice: 'Content was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def content_params
-      params.fetch(:content, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def content_params
+    params.require(:content).permit(:title, :description, :comment, :source)
+  end
 end

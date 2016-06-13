@@ -2,5 +2,5 @@
     <%= render partial: 'shared/header', locals: {current: nil} %>
 <% end %>
 
-<%= link_to 'Edit', edit_organizations_contents_path(@organization,@content) %> |
-<%= link_to 'Back', organizations_contents_path(@organization) %>
+<%= link_to 'Edit', edit_organization_content_path(@organization,@content) %> |
+<%= link_to 'Back', organization_path(@organization) %>

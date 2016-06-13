@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
 
-  before_action :set_organization, only: [:invit, :send_invit]
+  before_action :set_organization, only: [:invit, :send_invit, :delete_assignment]
 
   # GET /organizations
   # GET /organizations.json
@@ -64,24 +64,23 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  def invit
-
-  end
-
   def send_invit
     if user = User.find_by_email(params[:email])
       if user.organizations.include? @organization
-        render json: '', status: 200, notice: 'Already in'
+        flash[:notice] = t(:'organization.user_already_invited')
+        render :edit
       else
         user.new_token!
         assignment = Assignment.new(organization: @organization, user: user, is_active: false, is_admin: false)
         assignment.save!
         assignment.new_token!
         OrganizationMailer.send_invit(assignment).deliver_now
-        render json: '', status: 200, notice: 'Invitation sent'
+        flash[:notice] = t(:'organization.invit_email_sent')
+        render :edit
       end
     else
-      render json: '', status: 404, alert: 'User not found'
+      flash[:alert] = t(:'organization.invit_user_not_found')
+      render :edit
     end
   end
 
@@ -95,6 +94,11 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def delete_assignment
+    Assignment.find(params[:assignment_id]).destroy
+    redirect_to edit_organization_path(@organization), notice: 'User was successfully removed from this group.'
+  end
+
   private
   def set_organization
     @organization = Organization.find_by_slug(params[:organization_id])
@@ -104,4 +108,6 @@ class OrganizationsController < ApplicationController
   def organization_params
     params.require(:organization).permit(:name)
   end
+
 end
+

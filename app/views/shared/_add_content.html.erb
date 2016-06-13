@@ -1,0 +1,7 @@
+<% if @organization.try(:id) %>
+    <div id="add-content-button">
+      <a href="<%= new_organization_content_path(@organization) %>">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+<% end %>

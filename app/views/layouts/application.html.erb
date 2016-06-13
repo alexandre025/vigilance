@@ -10,11 +10,12 @@
 
 <%= yield :header %>
 <div class="container">
-  <%= render partial: 'shared/organizations_bar' %>
+  <%= render partial: 'shared/sidebar' %>
   <div class="main-view <%= 'without-bar' unless user_signed_in? %>">
     <%= render partial: 'shared/notifications' %>
     <%= yield %>
   </div>
+  <%= render partial: 'shared/add_content' %>
 </div>
 </body>
 </html>

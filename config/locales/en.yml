@@ -27,3 +27,7 @@ en:
   organization_new_submit: "Create new organization"
   organization_edit_submit: "Edit organization"
   search: "Search"
+  organization:
+    user_already_invited: "This user is already invited or in this group"
+    invit_email_sent: "An email has been sent to this user"
+    invit_user_not_found: "No user match with the provided email"

@@ -1,0 +1,7 @@
+<% if content %>
+  <div id="content_<%= content.id %>">
+    <a href="<%= organization_content_path(content.organization, content) %>">
+      <%= content.title %>
+    </a>
+  </div>
+<% end %>

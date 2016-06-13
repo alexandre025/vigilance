@@ -2,26 +2,10 @@
     <%= render partial: 'shared/header', locals: {current: nil} %>
 <% end %>
 
-<h1>Contents</h1>
+<h2><%= @organization.name %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render partial: 'shared/contents', locals: {contents: @organization.contents} %>
 
-  <tbody>
-    <% @contents.each do |content| %>
-      <tr>
-        <td><%= link_to 'Show', organization_content_path(@organization,content) %></td>
-        <td><%= link_to 'Edit', edit_organization_content_path(@organization,content) %></td>
-        <td><%= link_to 'Destroy', delete_organization_content_path(@organization,content), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Content', new_organization_content_path(@organization) %>
+

@@ -1,0 +1,20 @@
+#add-content-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: black;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    i {
+      line-height: 60px;
+      color: $white;
+    }
+  }
+}

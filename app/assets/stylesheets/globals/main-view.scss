@@ -1,7 +1,10 @@
+/* Cont*/
 .main-view {
   position: relative;
   left: 200px;
+  top: 60px;
 
+  /* If user isn't logged */
   &.without-bar {
     left: 0;
   }

@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   post '/search', to: 'home#search'
 
   resources :organizations do
-    get '/invit', to: 'organizations#invit'
+
     post '/invit', to: 'organizations#send_invit'
     get '/join', to: 'organizations#join'
+
+    delete '/assignment/:assignment_id', to: 'organizations#delete_assignment', as: :delete_assignment
+
     resources :tags
     resources :contents
   end
