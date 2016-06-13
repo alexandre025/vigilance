@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: vigilance_production
+  database: vigilance
   username: vigilance
-  password: <%= ENV['VIGILANCE_DATABASE_PASSWORD'] %>
+  password: vigilance
