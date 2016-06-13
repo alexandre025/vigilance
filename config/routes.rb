@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       sign_up: 'register'
   }
 
+  post '/search', to: 'home#search'
+
   resources :organizations do
     get '/invit', to: 'organizations#invit'
     post '/invit', to: 'organizations#send_invit'
