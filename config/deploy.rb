@@ -24,11 +24,10 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         execute :bundle, :install
-        execute :rails, 'db:create'
-        execute :rails, 'db:migrate'
+        execute :rails, 'db:migrate RAILS_ENV="production"'
         execute :rails, 'assets:precompile'
         execute :rails, 'tmp:cache:clear'
-        execute :rails, 's -e production -d -b localhost'
+        #execute :rails, 's -e production -d -b localhost'
       end
     end
   end
