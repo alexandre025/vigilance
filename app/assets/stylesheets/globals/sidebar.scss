@@ -1,15 +1,13 @@
 #sidebar {
   position: fixed;
   min-height: 100%;
-  background-color: $blue-grey-700;
-
-  padding: 0;
+  width: 200px;
 
   ul {
     li {
       div.title {
         height: 40px;
-        background-color: $blue-grey-900;
+
         position: relative;
         a{
           display: inline-block;
@@ -29,7 +27,7 @@
         }
       }
       a {
-        color: $white;
+
         &.tag {
           padding-left: 20px;
           display: block;

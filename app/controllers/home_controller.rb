@@ -4,4 +4,9 @@ class HomeController < ApplicationController
 
   end
 
+  def search
+    @q = Content.accessible(current_user).ransack(params[:search])
+    @contents = @q.result
+  end
+
 end
