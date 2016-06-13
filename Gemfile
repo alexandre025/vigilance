@@ -45,6 +45,9 @@ group :development do
   gem 'spring'
 
   gem 'mailcatcher'
+
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 gem 'devise'
