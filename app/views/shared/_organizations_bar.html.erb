@@ -4,12 +4,17 @@
       <ul>
         <% current_user.organizations.each do |o| %>
             <li>
-              <%= link_to o.name, organization_path(o), class: 'title' %>
+              <div class="title">
+                <%= link_to o.name, organization_path(o), class: 'title' %>
+                <% if can? :update, o %>
+                    <a href="<%= edit_organization_path(o) %>" class="edit"><i class="material-icons">create</i></a>
+                <% end %>
+              </div>
               <ul>
                 <% o.tags.each do |t| %>
-                  <li>
-                    <%= link_to t.name, organization_tag_path(o,t), class: 'tag' %>
-                  </li>
+                    <li>
+                      <%= link_to t.name, organization_tag_path(o, t), class: 'tag' %>
+                    </li>
                 <% end %>
               </ul>
             </li>
