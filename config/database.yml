@@ -52,3 +52,4 @@ production:
   database: vigilance
   username: vigilance
   password: vigilance
+  socket: /var/run/mysqld/mysqld.sock
