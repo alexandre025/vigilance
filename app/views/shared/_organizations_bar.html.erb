@@ -1,9 +1,24 @@
 <% if user_signed_in? %>
 
     <div id="sidebar" class="col-sm-3 col-md-2 hidden-xs sidebar">
-      <% current_user.organizations.each do |o| %>
-          <%= link_to o.name, organization_path(o) %>
-      <% end %>
+      <ul>
+        <% current_user.organizations.each do |o| %>
+            <li>
+              <%= link_to o.name, organization_path(o), class: 'title' %>
+              <ul>
+                <% o.tags.each do |t| %>
+                  <li>
+                    <%= link_to t.name, organization_tag_path(o,t), class: 'tag' %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+        <% end %>
+      </ul>
+
+      <div class="add-organization col-sm-3 col-md-2 hidden-xs">
+        <%= link_to '+', new_organization_path %>
+      </div>
     </div>
 
 <% end %>
