@@ -12,7 +12,7 @@
 
   <%= form_tag search_path(), method: :post, class: 'nav navbar-form' do %>
       <div class="form-group">
-        <%= text_field_tag :q, '', placeholder: t(:search), class: 'form-control' %>
+        <%= text_field_tag :q, @search_keywords, placeholder: t(:search), class: 'form-control' %>
       </div>
   <% end %>
 

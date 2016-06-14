@@ -59,3 +59,4 @@ en:
   new_registration:
     welcome: "You’re most welcome here ! :)"
     welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+  search_results: "Search results for %{keywords}"
