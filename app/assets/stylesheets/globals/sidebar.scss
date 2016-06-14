@@ -3,20 +3,36 @@
   top: 60px;
   height: 100%;
   width: 200px;
+  background-color: $sidebar-primary;
+  color: $white;
 
   ul {
     li {
       div.title {
         height: 40px;
-
+        background-color: $sidebar-second;
         position: relative;
+        &.active::before{
+          content: '';
+          display: inline-block;
+          background-color: $white;
+          position: absolute;
+          height: 40px;
+          width: 3px;
+          top: 0;
+          left: 0;
+        }
         a {
           display: inline-block;
           height: 40px;
+          color: $white;
+          text-decoration: none;
           &.title {
-            padding-left: 10px;
+            position: relative;
+            padding-left: 20px;
             line-height: 40px;
             width: 100%;
+            text-transform: uppercase;
           }
           &.edit {
             position: absolute;
@@ -24,16 +40,21 @@
             top: 0;
             line-height: 40px;
             width: 40px;
+            i{
+              line-height: 40px;
+            }
           }
         }
       }
       a {
-
         &.tag {
+          font-weight: 100;
+          text-decoration: none;
           padding-left: 20px;
           display: block;
-          line-height: 25px;
-          height: 25px;
+          line-height: 40px;
+          height: 40px;
+          color: $white;
         }
       }
     }
@@ -43,7 +64,7 @@
     position: fixed;
     height: 40px;
     width: 200px;
-    background-color: black;
+    background-color: $sidebar-second;
     text-align: center;
     bottom: 0;
     left: 0;
@@ -54,6 +75,7 @@
       width: 100%;
       height: 100%;
       i{
+        color: $white;
         line-height: 40px;
         font-size: 30px;
       }

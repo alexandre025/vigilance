@@ -3,6 +3,8 @@
   position: relative;
   left: 200px;
   top: 60px;
+  background-color: $background;
+  max-width: calc(100% - 200px);
 
   /* If user isn't logged */
   &.without-bar {

@@ -5,7 +5,8 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.by_organization(@organization)
+    redirect_to organization_path(@organization)
+    #@tags = Tag.by_organization(@organization)
   end
 
   # GET /tags/1
