@@ -1,17 +1,17 @@
-.main-view{
-  .grid{
+.main-view {
+  .grid {
     padding-left: 55px;
     padding-top: 40px;
-    .grid-item{
+    .grid-item {
       width: 345px;
       height: 390px;
       background: $white;
-      box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
       border-radius: 2px;
       margin-right: 50px;
       margin-bottom: 45px;
 
-      .content-header{
+      .content-header {
         height: 175px;
         position: relative;
         padding: 18px;
@@ -19,8 +19,8 @@
 
         box-shadow: inset 0px -75px 40px -15px rgba(0, 0, 0, 0.5);
 
-        a{
-          &.content-title{
+        a {
+          &.content-title {
             color: $white;
             font-size: 24px;
             height: 26px;
@@ -52,7 +52,7 @@
         color: $black;
         line-height: 24px;
 
-        p{
+        p {
           display: block;
           text-overflow: ellipsis;
           //white-space: nowrap;
@@ -61,11 +61,11 @@
           height: 100px;
         }
       }
-      .content-tags{
+      .content-tags {
         overflow: hidden;
         height: 18px;
         padding: 0px 15px;
-        .tag{
+        .tag {
           display: inline-block;
           border: 1px solid $black-o5;
           color: $black-o5;
@@ -76,9 +76,9 @@
           padding: 0px 10px;
         }
       }
-      .content-importance{
+      .content-importance {
         padding: 0px 0px 15px 15px;
-        &::before{
+        &::before {
           position: relative;
           top: -2px;
           content: '';
@@ -87,19 +87,43 @@
           height: 1px;
           background-color: $black;
         }
-        span{
+        span {
           display: inline-block;
           font-size: 9px;
           color: $black;
           line-height: 11px;
         }
       }
-      .content-actions{
+      .content-actions {
         border-top: 1px solid $black-o2;
         width: 100%;
         height: 35px;
         position: absolute;
         bottom: 0;
+
+        ul {
+          position: absolute;
+          height: 34px;
+          right: 0;
+          padding-right: 15px;
+          li {
+            display: inline-block;
+            a{
+              i{
+                line-height: 34px;
+                font-size: 25px;
+              }
+              &.follow_unfollow {
+                color: $black;
+                &.active{
+                  i{
+                    color: red;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
   load_and_authorize_resource :content, through: :organization
 
-  before_action :set_properties, only: [:follow, :unfollow]
+  before_action :set_properties, only: [:follow_unfollow]
 
   # GET /contents
   # GET /contents.json
@@ -67,12 +67,13 @@ class ContentsController < ApplicationController
     end
   end
 
-  def follow
-    current_user.follow(@conten) unless current_user.following?(@book)
-  end
-
-  def unfollow
-    current_user.stop_following(@content) if current_user.following?(@book)
+  def follow_unfollow
+    if current_user.following?(@content)
+      current_user.stop_following(@content)
+    else
+      current_user.follow(@content)
+    end
+    render json: '', status: 200
   end
 
   private
@@ -82,7 +83,7 @@ class ContentsController < ApplicationController
   end
 
   def set_properties
-    @organization = Organization.find(params[:organization_id])
+    @organization = Organization.find_by_slug(params[:organization_id])
     @content = Content.find(params[:content_id])
   end
 end

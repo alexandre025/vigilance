@@ -6,7 +6,8 @@
   background-color: $background;
   max-width: calc(100% - 200px);
 
-  h1 {
+
+  h1, h2 {
     font-size: 20px;
     color: $black;
     line-height: 24px;
@@ -17,6 +18,11 @@
   /* If user isn't logged */
   &.without-bar {
     left: 0;
+    top: 0;
     max-width: 100%;
+
+    h1, h2 {
+      padding: 0;
+    }
   }
 }

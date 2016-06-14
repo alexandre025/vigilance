@@ -16,7 +16,13 @@
         <% end %>
       </div>
       <div class="content-actions">
-
+        <ul>
+          <li>
+            <a href="<%= organization_content_follow_unfollow_path(@organization, content) %>" class="follow_unfollow <%= 'active' if current_user.following?(content) %>" data-remote="true" data-method="post">
+              <i class="material-icons">history</i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 <% end %>

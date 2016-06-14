@@ -24,6 +24,11 @@ $(document).on('page:change', function(){
     $(".grid").masonry({
         itemSelector: ".grid-item"
     });
+
+    $(".follow_unfollow ").on('click',function (e) {
+       e.preventDefault();
+        $(this).toggleClass('active');
+    });
 });
 
 

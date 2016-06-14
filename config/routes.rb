@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
     resources :tags
     resources :contents do
-      post '/follow', to: 'contents#follow'
-      post '/unfollow', to: 'contents#unfollow'
+      post '/follow_unfollow', to: 'contents#follow_unfollow'
+
     end
   end
 
