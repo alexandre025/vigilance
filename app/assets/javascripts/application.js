@@ -13,11 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require select2
 //= require_tree .
 
-$(document).on("page:change", function(){
-    $.material.init();
+
+$(document).on('page:change', function(){
+    $("select.select2").select2();
 });
+
 
 
 

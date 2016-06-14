@@ -31,6 +31,8 @@
       <%= f.text_area :comment %>
     </div>
 
+    <%= f.collection_select :tag_ids, Tag.by_organization(@organization), :id, :name, {}, {multiple: true, class: 'select2'} %>
+
     <div class="actions">
       <%= f.submit %>
     </div>

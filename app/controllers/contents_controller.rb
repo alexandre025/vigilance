@@ -68,6 +68,6 @@ class ContentsController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def content_params
-    params.require(:content).permit(:title, :description, :comment, :source)
+    params.require(:content).permit(:title, :description, :comment, :source, tag_ids: [])
   end
 end
