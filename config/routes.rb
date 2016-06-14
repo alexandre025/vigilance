@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     delete '/assignment/:assignment_id', to: 'organizations#delete_assignment', as: :delete_assignment
 
     resources :tags
-    resources :contents
+    resources :contents do
+      post '/follow', to: 'contents#follow'
+      post '/unfollow', to: 'contents#unfollow'
+    end
   end
 
 end

@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
   load_and_authorize_resource :content, through: :organization
 
-
+  before_action :set_properties, only: [:follow, :unfollow]
 
   # GET /contents
   # GET /contents.json
@@ -67,9 +67,22 @@ class ContentsController < ApplicationController
     end
   end
 
+  def follow
+    current_user.follow(@conten) unless current_user.following?(@book)
+  end
+
+  def unfollow
+    current_user.stop_following(@content) if current_user.following?(@book)
+  end
+
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def content_params
-    params.require(:content).permit(:title, :description, :comment, :source, tag_ids: [])
+    params.require(:content).permit(:title, :description, :comment, :source, :importance, tag_ids: [])
+  end
+
+  def set_properties
+    @organization = Organization.find(params[:organization_id])
+    @content = Content.find(params[:content_id])
   end
 end

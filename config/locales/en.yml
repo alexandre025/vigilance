@@ -33,3 +33,9 @@ en:
     invit_user_not_found: "No user match with the provided email"
   content:
     created_by: "By %{name}"
+    importance:
+      :0: "Naze"
+      :1: "Pas mal"
+      :2: "A lire"
+      :3: "Incontournable"
+      :4: "Trombonne"

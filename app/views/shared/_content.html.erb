@@ -7,6 +7,9 @@
       <div class="content-description">
         <%= content_tag :p, content.description.html_safe %>
       </div>
+      <div class="content-importance">
+        <%= content_tag :span, t(:"content.importance.#{content.importance}") %>
+      </div>
       <div class="content-tags">
         <% content.tags.each do |t| %>
           <%= content_tag :span, t.name, class: 'tag' %>
