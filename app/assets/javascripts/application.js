@@ -19,6 +19,11 @@
 
 $(document).on('page:change', function(){
     $("select.select2").select2();
+
+
+    $(".grid").masonry({
+        itemSelector: ".grid-item"
+    });
 });
 
 

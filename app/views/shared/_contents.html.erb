@@ -1,3 +1,5 @@
-<% contents.each do |c| %>
-  <%= render partial: 'shared/single_content', locals: {content: c} %>
-<% end %>
+<div class="grid">
+  <% contents.each do |c| %>
+      <%= render partial: 'shared/content', locals: {content: c} %>
+  <% end %>
+</div>
