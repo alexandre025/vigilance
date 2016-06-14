@@ -85,7 +85,6 @@ class OrganizationsController < ApplicationController
   end
 
   def join
-    byebug
     if assignment = Assignment.find_by(assignment_token: params[:assignment_token])
       assignment.activate!
       redirect_to organization_path(assignment.organization), notice: "You succefully joined #{assignment.organization.name}"
