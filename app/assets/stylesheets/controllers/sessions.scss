@@ -1,4 +1,4 @@
-#sessions_new {
+#sessions_new, #passwords_new, #passwords_edit, #registrations_new, #registrations_create, #passwords_create {
 
   position: relative;
   height: 100%;
@@ -10,12 +10,82 @@
   }
   .main-block {
     position: absolute;
+    background-color: $white;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+    border-radius: 11px;
+
+    h1, h2 {
+      max-width: 380px;
+      font-weight: 700;
+      font-size: 24px;
+      color: $black;
+      line-height: 29px;
+      text-align: center;
+      margin: 95px auto 0;
+    }
+
+    p {
+      &.welcome-message {
+        margin: 14px auto 60px auto;
+        width: 350px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        color: $black-o5;
+        letter-spacing: 0.5px;
+        line-height: 17px;
+      }
+    }
+
+    a {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 400;
+      font-size: 12px;
+      color: $black-o5;
+      line-height: 17px;
+    }
+  }
+}
+
+#sessions_new {
+
+  .main-block {
     left: calc(50% - 342px);
     top: calc(50% - 307px);
     width: 685px;
     height: 615px;
-    background-color: $white;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
-    border-radius: 11px;
+  }
+
+}
+
+#registrations_new, #registrations_create {
+  .main-block {
+    left: calc(50% - 342px);
+    top: calc(50% - 390px);
+    width: 685px;
+    height: 780px;
+  }
+}
+
+#passwords_new, #passwords_create {
+
+  .main-block {
+    left: calc(50% - 342px);
+    top: calc(50% - 307px);
+    width: 685px;
+    height: 615px;
+  }
+
+}
+
+#passwords_edit {
+  .main-block {
+    left: calc(50% - 342px);
+    top: calc(50% - 307px);
+    width: 685px;
+    height: 615px;
   }
 }

@@ -1,35 +1,49 @@
-<% content_for :header do %>
-    <%= render partial: 'shared/header', locals: {current: :signup} %>
+<% unless try(:devise_error_messages!).try(:blank?) %>
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <%= devise_error_messages! %>
+    </div>
 <% end %>
 
-<div class="col-md-5">
-  <h2>Sign up</h2>
+<div class="main-block">
+  <h2><%= t('new_registration.welcome')%></h2>
+
+  <p class="welcome-message">
+    <%= t('new_registration.welcome_message')%>
+  </p>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
 
-      <div class="form-group label-floating">
-        <%= f.label :email, class: 'control-label' %>
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.text_field :firstname, autofocus: true, placeholder: t('placeholder.login.firstname'), required: true, class: '' %>
       </div>
 
-      <div class="form-group label-floating">
-        <%= f.label :password, class: 'control-label' %>
-        <%= f.password_field :password, autocomplete: "off", autocorrect: "off", class: 'form-control' %>
+      <div class="form-group">
+        <%= f.text_field :lastname, placeholder: t('placeholder.login.lastname'), required: true, class: '' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.email_field :email, placeholder: t('placeholder.login.email'), required: true, class: '' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", autocorrect: "off", placeholder: t('placeholder.login.password'), required: true, class: '' %>
         <% if @minimum_password_length %>
             <p class="help-block">(<%= @minimum_password_length %> characters minimum)</p>
         <% end %>
       </div>
 
-      <div class="form-group label-floating">
-        <%= f.label :password_confirmation, class: 'control-label' %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", autocorrect: "off", class: 'form-control' %>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "off", autocorrect: "off", placeholder: t('placeholder.login.password_confirm'), required: true, class: '' %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-raised btn-primary' %>
+      <div class="form-group">
+        <%= f.submit "Sign up", class: '' %>
       </div>
+
+      <%- if controller_name != 'sessions' %>
+          <%= link_to t('back_to_login'), new_session_path(resource_name) %><br />
+      <% end -%>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>

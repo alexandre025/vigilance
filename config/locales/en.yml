@@ -39,3 +39,25 @@ en:
       :2: "A lire"
       :3: "Incontournable"
       :4: "Trombonne"
+  placeholder:
+    login:
+      email: "Email address"
+      password: "Password"
+      password_confirm: "Confirm password"
+      firstname: "Firstname"
+      lastname: "Lastname"
+  login:
+    welcome: "Nice to see you !"
+    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    signup:
+      link: "Don't have an account? Get Started"
+  new_password:
+    welcome: "Enter your email adress and we’ll get you back on track"
+    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+  back_to_login: "Go back to login"
+  edit_password:
+    welcome: "Change your password"
+    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+  new_registration:
+    welcome: "You’re most welcome here ! :)"
+    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
