@@ -1,7 +1,14 @@
 <% if content %>
-  <div id="content_<%= content.id %>" class="grid-item">
-    <a href="<%= organization_content_path(content.organization, content) %>">
-      <%= content.title %>
-    </a>
-  </div>
+    <div id="content_<%= content.id %>" class="grid-item">
+      <div class="content-header" style="background-image: url('<%= content.try(:image_url).html_safe %>');background-position: center center;background-repeat: no-repeat;background-size:cover;">
+        <%= link_to content.try(:title), organization_content_path(content.organization, content), class: 'content-title' %>
+        <%= content_tag :span, t(:'content.created_by', name: content.user.email), class: 'content-author' %>
+      </div>
+      <div class="content-description">
+        <%= content_tag :p, content.description.html_safe %>
+      </div>
+      <div class="content-bottom">
+
+      </div>
+    </div>
 <% end %>

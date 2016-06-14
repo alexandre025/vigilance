@@ -31,3 +31,5 @@ en:
     user_already_invited: "This user is already invited or in this group"
     invit_email_sent: "An email has been sent to this user"
     invit_user_not_found: "No user match with the provided email"
+  content:
+    created_by: "By %{name}"

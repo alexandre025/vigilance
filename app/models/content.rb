@@ -1,4 +1,5 @@
 class Content < ApplicationRecord
+  require 'metainspector'
 
   belongs_to :organization
   belongs_to :user
@@ -9,5 +10,14 @@ class Content < ApplicationRecord
   scope :by_organization, -> (organization) {
     where(organization: organization)
   }
+
+  validates :source, presence: true
+
+  after_save do
+    page = MetaInspector.new(source)
+    update_attributes(title: page.title) if title.blank?
+    update_attributes(description: page.description) if description.blank?
+    update_attributes(image_url: page.images.best) if image_url.blank?
+  end
 
 end

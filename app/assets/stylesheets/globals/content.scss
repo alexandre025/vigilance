@@ -1,0 +1,49 @@
+.main-view{
+  .grid{
+    padding-left: 55px;
+    padding-top: 40px;
+    .grid-item{
+      width: 345px;
+      height: 390px;
+      background: $white;
+      box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+      border-radius: 2px;
+      margin-right: 50px;
+      margin-bottom: 45px;
+
+      .content-header{
+        height: 175px;
+        position: relative;
+        padding: 18px;
+        border-radius: 2px 2px 0px 0px;
+
+        box-shadow: inset 0px -30px 25px 20px rgba(0,0,0,0.50);
+
+        a{
+          &.content-title{
+            color: $white;
+            font-size: 24px;
+            height: 26px;
+            line-height: 26px;
+            text-overflow: ellipsis;
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: absolute;
+            bottom: 30px;
+            display: block;
+            text-decoration: none;
+            font-weight: 200;
+          }
+        }
+        .content-author {
+          color: $white;
+          font-size: 12px;
+          position: absolute;
+          bottom: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

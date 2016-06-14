@@ -2,6 +2,8 @@ class ContentsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
   load_and_authorize_resource :content, through: :organization
 
+
+
   # GET /contents
   # GET /contents.json
   def index

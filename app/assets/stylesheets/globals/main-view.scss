@@ -14,15 +14,6 @@
     padding-left: 80px;
   }
 
-  .grid{
-    padding-left: 55px;
-    padding-top: 40px;
-    .grid-item{
-      width: 210px;
-      height: 250px;
-    }
-  }
-
   /* If user isn't logged */
   &.without-bar {
     left: 0;
