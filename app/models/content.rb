@@ -9,8 +9,14 @@ class Content < ApplicationRecord
   has_and_belongs_to_many :tags
   accepts_nested_attributes_for :tags
 
+  default_scope { order('created_at DESC') }
+
   scope :by_organization, -> (organization) {
     where(organization: organization)
+  }
+
+  scope :accessible, -> (current_user) {
+    where(organization: current_user.organizations)
   }
 
   validates :source, presence: true

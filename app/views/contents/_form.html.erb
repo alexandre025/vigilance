@@ -33,7 +33,7 @@
 
     <div class="form-group">
       <%= f.label :importance %>
-      <%= f.select :importance, options_for_select([[t(:"content.importance.0"), 0], [t(:"content.importance.1"), 1], [t(:"content.importance.2"), 2], [t(:"content.importance.3"), 3], [t(:"content.importance.4"), 4]], 0) %>
+      <%= f.select :importance, options_for_select([[t(:"content.importance.0"), 0], [t(:"content.importance.1"), 1], [t(:"content.importance.2"), 2]], 0) %>
     </div>
 
     <%= f.collection_select :tag_ids, Tag.by_organization(@organization), :id, :name, {}, {multiple: true, class: 'select2'} %>

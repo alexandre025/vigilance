@@ -117,7 +117,7 @@
                 color: $black;
                 &.active{
                   i{
-                    color: red;
+                    color: $to-read-active;
                   }
                 }
               }

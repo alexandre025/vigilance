@@ -1,0 +1,7 @@
+<% content_for :header do %>
+    <%= render partial: 'shared/header', locals: {current: nil} %>
+<% end %>
+
+<h2><%= t('search_results') %></h2>
+
+<%= render partial: 'shared/contents', locals: {contents: @contents} %>

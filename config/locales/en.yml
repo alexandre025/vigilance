@@ -34,11 +34,9 @@ en:
   content:
     created_by: "By %{name}"
     importance:
-      :0: "Naze"
-      :1: "Pas mal"
-      :2: "A lire"
-      :3: "Incontournable"
-      :4: "Trombonne"
+      :0: "Interesting"
+      :1: "To read"
+      :2: "Unavoidable"
   placeholder:
     login:
       email: "Email address"
