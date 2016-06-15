@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     redirect_to url_for(params.except(:auth_token).permit!)
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    Rails.logger.debug "Access denied on #{exception.action} #{exception.subject.inspect}"
+    # ...
+  end
+
   protected
   def configure_permitted_parameters
     added_attrs = [:firstname, :lastname, :email, :password, :password_confirmation, :remember_me]
