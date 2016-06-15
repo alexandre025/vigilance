@@ -2,35 +2,6 @@
     <%= render partial: 'shared/header', locals: {current: :organizations} %>
 <% end %>
 
-<h1>Organizations</h1>
+<h1><%= t('content_from_anywhere')%></h1>
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th>Action</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @organizations.each do |organization| %>
-      <tr>
-        <td><%= organization.name %></td>
-        <td></td>
-        <td></td>
-        <td><%= link_to 'Show', organization %>
-          <% if can? :manage, organization %>
-              <%= link_to 'Edit', edit_organization_path(organization) %>
-              <%= link_to 'Destroy', organization, method: :delete, data: {confirm: 'Are you sure?'} %>
-          <% end %>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Organization', new_organization_path, class: 'btn btn-raised btn-primary' if can? :create, Organization %>
+<%= render partial: 'shared/contents', locals: {contents: Content.accessible(current_user)}%>

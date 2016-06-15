@@ -11,7 +11,7 @@
 <%= yield :header %>
 <div class="container">
   <%= render partial: 'shared/sidebar' %>
-  <div class="main-view <%= 'without-bar' unless user_signed_in? %>">
+  <div class="main-view <%= user_signed_in? ? 'logged-in' : 'without-bar' %>">
     <%= render partial: 'shared/notifications' %>
     <%= yield %>
   </div>

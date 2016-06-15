@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="form-group label-floating">
-    <%= f.label :name, class: 'control-label' %>
-    <%= f.text_field :name, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label t('organzation.label.name'), class: '' %>
+    <%= f.text_field :name, placeholder: t('placeholder.new_organization.name') %>
   </div>
 
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit (@organization.new_record? ? t(:organization_new_submit) : t(:organization_edit_submit)), class: 'btn btn-raised btn-primary' %>
   </div>
 <% end %>

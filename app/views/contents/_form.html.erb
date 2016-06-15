@@ -13,7 +13,7 @@
 
     <div class="form-group">
       <%= f.label :source %>
-      <%= f.text_field :source %>
+      <%= f.url_field :source, placeholder: t('placeholder.content.source'), required: true, autofocus: true %>
     </div>
 
     <div class="form-group">
@@ -33,12 +33,15 @@
 
     <div class="form-group">
       <%= f.label :importance %>
-      <%= f.select :importance, options_for_select([[t(:"content.importance.0"), 0], [t(:"content.importance.1"), 1], [t(:"content.importance.2"), 2]], 0) %>
+      <%= f.select :importance, options_for_select([[t(:"content.importance.0"), 0], [t(:"content.importance.1"), 1], [t(:"content.importance.2"), 2]], 0), {}, class: 'select2-no-search' %>
     </div>
 
-    <%= f.collection_select :tag_ids, Tag.by_organization(@organization), :id, :name, {}, {multiple: true, class: 'select2'} %>
+    <div class="form-group">
+      <%= f.label :tags %>
+      <%= f.collection_select :tag_ids, Tag.by_organization(@organization), :id, :name, {}, {multiple: true, class: 'select2'} %>
+    </div>
 
-    <div class="actions">
+    <div class="form-group">
       <%= f.submit %>
     </div>
 <% end %>

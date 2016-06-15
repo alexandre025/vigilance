@@ -31,6 +31,8 @@ en:
     user_already_invited: "This user is already invited or in this group"
     invit_email_sent: "An email has been sent to this user"
     invit_user_not_found: "No user match with the provided email"
+    add_user:
+      submit: "Invit an user"
   content:
     created_by: "By %{name}"
     importance:
@@ -44,6 +46,14 @@ en:
       password_confirm: "Confirm password"
       firstname: "Firstname"
       lastname: "Lastname"
+    content:
+      source: "Source URL"
+    new_organization:
+      name: "New orgnization name"
+    add_user:
+      email: "User's registred email"
+    new_tag:
+      name: "New tag name"
   login:
     welcome: "Nice to see you !"
     welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
@@ -63,3 +73,9 @@ en:
   from: "From %{f}"
   saved_contents: "Saved contents"
   saved_to_read: "Saved to read later"
+  content_from_anywhere: "The last contents shared from all of your organizations"
+  organzation:
+    label:
+      name: "Organization name"
+  tag_new_submit: "Create new tag"
+  tag_edit_submit: "Edit tag"

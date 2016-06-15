@@ -6,13 +6,15 @@ $black: rgba(67,66,66,1);
 $black-o5: rgba(67,66,66,0.5);
 $black-o2: rgba(67,66,66,0.2);
 
+$blue: rgba(0,170,241,1);
+
 $background: rgba(248,249,252,1);
 
-$header-primary: rgba(0,170,241,1);
+$header-primary: $black;
 
-$to-read-active: $header-primary;
+$to-read-active: $blue;
 
-$submit-background: $header-primary;
+$submit-background: $blue;
 $submit-text: $white;
 
 $sidebar-primary: rgba(29,47,60,1);

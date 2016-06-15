@@ -11,12 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: t('placeholder.new_tag.name') %>
+    <%= f.submit (tag.new_record? ? t(:tag_new_submit) : t(:tag_edit_submit)), class: 'after-input' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

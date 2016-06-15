@@ -2,33 +2,34 @@
     <%= render partial: 'shared/header', locals: {current: :organizations} %>
 <% end %>
 
-<h1>Editing Organization</h1>
+<h2>Editing Organization</h2>
 
 <%= render 'form', organization: @organization %>
 
-<h1>Editing tags</h1>
+<h3>Editing tags</h3>
 
 <% @organization.tags.each do |t| %>
     <span class="organization-tag tag">
       <%= t.name %>
-      <%= link_to 'Destroy', organization_tag_path(@organization, t), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <%= link_to content_tag(:i,'close',class:'material-icons'), organization_tag_path(@organization, t), method: :delete, data: {confirm: 'Are you sure?'} %>
     </span>
 <% end %>
 
 <%= render 'tags/form', tag: Tag.new %>
 
-<h1>Editing Users</h1>
+<h3>Editing Users</h3>
 
 <% @organization.assignments.each do |a| %>
     <span class="organization-user tag">
-      <%= a.user.email %>
-      <%= link_to 'Destroy', organization_delete_assignment_path(@organization, a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
+      <%= "#{a.user.firstname} #{a.user.lastname}" %>
+      <%= link_to content_tag(:i,'close',class:'material-icons'), organization_delete_assignment_path(@organization, a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
     </span>
 <% end %>
 
 <%= form_tag organization_invit_path(@organization), method: :post do %>
-    <%= email_field_tag :email %>
-    <%= submit_tag :add %>
-<% end %>
+    <div class="form-group">
+      <%= email_field_tag :email, '', placeholder: t('placeholder.add_user.email') %>
+      <%= submit_tag t('organization.add_user.submit'), class: 'after-input' %>
+    </div>
 
-<%= link_to 'Back', organization_path(@organization) %>
+<% end %>

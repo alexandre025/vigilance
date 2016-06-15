@@ -12,6 +12,96 @@ form {
 
 }
 
+.main-view.logged-in {
+  form {
+    margin-left: 80px;
+    width: 560px;
+
+    .form-group {
+      width: 330px;
+      margin-top: 30px;
+
+      .select2-container {
+        display: block;
+        margin-top: 15px;
+
+        &.select2-container-multi {
+          .select2-choices {
+            .select2-search-choice {
+              //color: $white;
+              //background-color: $blue;
+            }
+          }
+        }
+      }
+
+      .help-block {
+        font-weight: 400;
+        font-size: 12px;
+        color: $black-o5;
+        line-height: 17px;
+        margin-left: 20px;
+      }
+
+      label {
+        font-weight: 700;
+        font-size: 24px;
+        color: $black;
+        line-height: 29px;
+      }
+      textarea {
+        margin-top: 15px;
+        width: 330px;
+        display: block;
+        background-color: $background;
+        font-weight: 200;
+        font-size: 16px;
+        color: #434242;
+        line-height: 21px;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      input {
+        display: block;
+        margin-top: 15px;
+
+        &[type=text], &[type=email], &[type=password], &[type=url] {
+          height: 25px;
+          width: 330px;
+          background-color: $background;
+          font-weight: 200;
+          font-size: 16px;
+          color: #434242;
+          line-height: 21px;
+          border: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        &[type=submit] {
+          height: 45px;
+          min-width: 195px;
+          padding: 0px 20px;
+          text-transform: uppercase;
+          color: $submit-text;
+          background-color: $submit-background;
+          border-radius: 40px;
+          border: none;
+          cursor: pointer;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
 /* Style for sign_in/sign_up inputs */
 .main-view.without-bar {
   form {

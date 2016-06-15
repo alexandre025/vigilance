@@ -21,6 +21,10 @@ Turbolinks.enableProgressBar();
 $(document).on('page:change', function () {
     $("select.select2").select2();
 
+    $("select.select2-no-search").select2({
+        minimumResultsForSearch: Infinity
+    });
+
 
     $(".grid").masonry({
         itemSelector: ".grid-item"

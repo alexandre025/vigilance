@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  root 'organizations#index'
 
   devise_for :users, path: '', path_names: {
       sign_in: 'login',
