@@ -20,10 +20,12 @@ class Content < ApplicationRecord
   validates :source, presence: true
 
   after_save do
-    page = MetaInspector.new(source)
-    update_attributes(title: page.title) if title.blank?
-    update_attributes(description: page.description) if description.blank?
-    update_attributes(image_url: page.images.best) if image_url.blank?
+    if title.blank? || description.blank? || image_url.blank?
+      page = MetaInspector.new(source)
+      update_attributes(title: page.title) if title.blank? && !page.title.blank?
+      update_attributes(description: page.description) if description.blank? && !page.description.blank?
+      update_attributes(image_url: page.images.best) if image_url.blank? && !page.images.best.blank?
+    end
   end
 
 end

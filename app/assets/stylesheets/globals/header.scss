@@ -1,6 +1,6 @@
-.turbolinks-progress-bar {
-  height: 5px;
-  color: $white;
+html.turbolinks-progress-bar::before {
+  background-color: $white !important;
+  height: 3px !important;
 }
 
 header {
