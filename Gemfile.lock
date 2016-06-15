@@ -124,6 +124,8 @@ GEM
       skinny (>= 0.1.2)
       sqlite3-ruby
       thin
+    material_icons (2.2.0)
+      railties (>= 3.2)
     metainspector (5.2.1)
       addressable (~> 2.4)
       faraday (~> 0.9)
@@ -272,6 +274,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mailcatcher
+  material_icons
   metainspector
   mysql2 (>= 0.3.13, < 0.5)
   passenger
