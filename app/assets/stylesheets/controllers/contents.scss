@@ -4,6 +4,158 @@
 
     // Here
 
+    .article {
+    	width: 90%;
+    	max-width: 770px;
+    	margin: 0 auto;
+    	text-align:center;
+
+    	.article-header {
+    		padding: 0 40px;
+    		padding-top:30px;
+    		margin-bottom:30px;
+
+    	    .article-title {
+	    		text-transform:uppercase;
+	    		color:$black;
+	    		font-size:22px;
+	    		line-height:30px;
+	    		letter-spacing:2px;
+	    		padding-left:0;
+	    	}
+
+	    	.article-date {
+	    		text-transform:uppercase;
+	    		font-size:12px;
+	    		color: $black-o5;
+	    		line-height:18px;
+	    		margin:5px 0;
+	    		margin-bottom:12px;
+
+	    		i{
+	    			margin-right:10px;
+	    			font-size:12px;
+	    			height: 14px;
+    				vertical-align: middle;
+	    		}
+	    	}
+
+	    	.article-tags {
+		        overflow: hidden;
+		        height: 18px;
+		        padding: 0px 15px;
+		        .tag {
+		          display: inline-block;
+		          border: 1px solid $black-o5;
+		          color: $black-o5;
+		          border-radius: 40px;
+		          height: 18px;
+		          line-height: 18px;
+		          font-size: 12px;
+		          margin-left:5px;
+		          padding: 0px 10px;
+
+		          &:first-child{
+		          	margin-left:0;
+		          }
+		        }
+		    }
+
+		    .article-importance {
+		    	color: $black-o5;
+		    	margin-top:12px;
+		    	font-size:12px;
+		    	line-height:18px;
+		    }
+
+    	}
+
+    	.article-description, .article-comment {
+    		position:relative;
+    		box-sizing: border-box;
+    		padding: 0 40px;
+    		color: $gray;
+    		font-size:16px;
+    		line-height:22px;
+    		text-align:left;
+    		font-style: italic;
+    	}
+
+        .article-image {
+        	position:relative;
+	    	height: 214px;
+	    	width: 100%;
+	    	margin: 30px 0;
+	    }
+
+	    .article-footer {
+	    	padding: 0 40px;
+    		margin-top:100px;
+    		margin-bottom:60px;
+    		text-align:center;
+
+    		button{
+    			display:inline-block;
+    			vertical-align:middle;
+    			height: 45px;
+		        min-width: 195px;
+		        margin-top:5px;
+		        padding: 0px 20px;
+		        color: $gray;
+		        background: none;
+		        border:2px solid $submit-background;
+		        border-radius: 40px;
+		        cursor: pointer;
+		        font-size:12px;
+		        outline:none;
+
+		        &:hover{
+		        	background-color:$submit-background;
+		        	color:$white;
+		        }
+    		}
+    		.later{
+    			float:left;
+    		}
+    		.go{
+    			float:right;
+    		}
+
+    		.like{
+				display:inline-block;
+				vertical-align:middle;
+				color:$black-o5;
+
+				p{
+					font-size:12px;
+					margin-bottom:8px;
+				}
+
+				.like-btn{
+					position:relative;
+					height:35px;
+
+					span{
+						position:absolute;
+						top:50%;
+						left:50%;
+						-webkit-transform: translate(-55%,-55%);
+						-moz-transform: translate(-55%,-55%);
+						-ms-transform: translate(-55%,-55%);
+						transform: translate(-55%,-55%);
+						color:$white;
+						font-size:16px;
+					}
+
+					i{
+						font-size:35px;
+					}
+				}
+    		}
+	    }
+
+    }
+
   }
 
 }
