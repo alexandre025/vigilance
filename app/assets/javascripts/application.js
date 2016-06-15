@@ -18,7 +18,7 @@
 
 Turbolinks.enableProgressBar();
 
-$(document).on('page:change', function(){
+$(document).on('page:change', function () {
     $("select.select2").select2();
 
 
@@ -26,14 +26,19 @@ $(document).on('page:change', function(){
         itemSelector: ".grid-item"
     });
 
-    $(".to_read").on('click',function (e) {
-       e.preventDefault();
+    $(".to_read").on('click', function (e) {
+        e.preventDefault();
         $(this).toggleClass('active');
     });
 
-    $(".like").on('click',function (e) {
+    $(".like").on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
+    });
+
+    $(".alert i").on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().hide();
     });
 });
 

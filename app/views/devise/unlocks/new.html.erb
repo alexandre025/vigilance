@@ -1,11 +1,12 @@
-<% content_for :header do %>
-    <%= render partial: 'shared/header', locals: {current: nil} %>
+<% unless try(:devise_error_messages!).try(:blank?) %>
+    <div class="alert alert-success">
+      <i type="button" class="material-icons">close</i>
+      <%= devise_error_messages! %>
+    </div>
 <% end %>
-
 <h2>Resend unlock instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
