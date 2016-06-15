@@ -8,6 +8,8 @@
 <%= image_tag @content.image_url %>
 <%= @content.created_at %>
 
+<%= t(:"content.importance.#{@content.importance}")%>
+
 <%= @organization.name %>
 
 <% @content.tags.each do |t| %>
