@@ -12,13 +12,20 @@
       </div>
       <div class="content-tags">
         <% content.tags.each do |t| %>
-          <%= content_tag :span, t.name, class: 'tag' %>
+            <%= content_tag :span, t.name, class: 'tag' %>
         <% end %>
       </div>
       <div class="content-actions">
+        <span class="message-left">
+          <% if @organization %>
+
+          <% else %>
+              <%= t('from',f: content.organization.name) %>
+          <% end %>
+        </span>
         <ul>
           <li>
-            <a href="<%= organization_content_follow_unfollow_path(content.organization, content) %>" class="follow_unfollow <%= 'active' if current_user.following?(content) %>" data-remote="true" data-method="post">
+            <a href="<%= organization_content_to_read_path(content.organization, content) %>" class="follow_unfollow <%= 'active' if ContentsSaved.is_saved_to_read?(content,current_user) %>" data-remote="true" data-method="post">
               <i class="material-icons">history</i>
             </a>
           </li>

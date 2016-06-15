@@ -18,6 +18,9 @@
 
 
   <ul class="nav navbar-right">
+    <a href="<%= saved_contents_path %>">
+      <i class="material-icons">history</i> <%= t('saved_to_read') %>
+    </a>
     <% if user_signed_in? %>
         <%= content_tag :li, (link_to t(:sign_out), destroy_user_session_path, method: :delete) %></li>
     <% else %>

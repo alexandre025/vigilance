@@ -10,4 +10,8 @@ class HomeController < ApplicationController
     @contents = @q.result
   end
 
+  def saved
+
+  end
+
 end

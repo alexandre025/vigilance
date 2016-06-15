@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614212233) do
+ActiveRecord::Schema.define(version: 20160614233058) do
 
   create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -40,23 +40,19 @@ ActiveRecord::Schema.define(version: 20160614212233) do
     t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
+  create_table "contents_saveds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "content_id"
+    t.string  "relation"
+    t.index ["content_id"], name: "index_contents_saveds_on_content_id", using: :btree
+    t.index ["user_id"], name: "index_contents_saveds_on_user_id", using: :btree
+  end
+
   create_table "contents_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "content_id"
     t.integer "tag_id"
     t.index ["content_id"], name: "index_contents_tags_on_content_id", using: :btree
     t.index ["tag_id"], name: "index_contents_tags_on_tag_id", using: :btree
-  end
-
-  create_table "follows", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "followable_type",                 null: false
-    t.integer  "followable_id",                   null: false
-    t.string   "follower_type",                   null: false
-    t.integer  "follower_id",                     null: false
-    t.boolean  "blocked",         default: false, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
-    t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

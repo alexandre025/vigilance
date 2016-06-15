@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post '/search', to: 'home#search'
 
+  get '/saved_contents', to: 'home#saved'
+
   resources :organizations do
 
     post '/invit', to: 'organizations#send_invit'
@@ -19,8 +21,8 @@ Rails.application.routes.draw do
 
     resources :tags
     resources :contents do
-      post '/follow_unfollow', to: 'contents#follow_unfollow'
-
+      post '/to_read', to: 'contents#to_read'
+      post '/like', to: 'contents#like'
     end
   end
 

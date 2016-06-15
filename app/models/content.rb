@@ -1,8 +1,6 @@
 class Content < ApplicationRecord
   require 'metainspector'
 
-  acts_as_followable
-
   belongs_to :organization
   belongs_to :user
 

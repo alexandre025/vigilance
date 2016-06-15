@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   load_and_authorize_resource :organization, find_by: :slug
   load_and_authorize_resource :content, through: :organization
 
-  before_action :set_properties, only: [:follow_unfollow]
+  before_action :set_properties, only: [:to_read, :like]
 
   # GET /contents
   # GET /contents.json
@@ -67,11 +67,20 @@ class ContentsController < ApplicationController
     end
   end
 
-  def follow_unfollow
-    if current_user.following?(@content)
-      current_user.stop_following(@content)
+  def to_read
+    if ContentsSaved.is_saved_to_read?(@content, current_user)
+      ContentsSaved.destroy(ContentsSaved.find_by(content: @content, user: current_user, relation: :to_read))
     else
-      current_user.follow(@content)
+      ContentsSaved.create(content: @content, user: current_user, relation: :to_read)
+    end
+    render json: '', status: 200
+  end
+
+  def like
+    if ContentsSaved.is_liked?(@content, current_user)
+      ContentsSaved.destroy(ContentsSaved.find(content: @content, user: current_user, relation: :liked))
+    else
+      ContentsSaved.create(content: @content, user: current_user, relation: :liked)
     end
     render json: '', status: 200
   end
