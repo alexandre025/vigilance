@@ -2,5 +2,16 @@
     <%= render partial: 'shared/header', locals: {current: nil} %>
 <% end %>
 
-<%= link_to 'Edit', edit_organization_content_path(@organization,@content) %> |
-<%= link_to 'Back', organization_path(@organization) %>
+<%= @content.title %>
+<%= @content.description %>
+<%= @content.comment %>
+<%= image_tag @content.image_url %>
+<%= @content.created_at %>
+
+<%= @organization.name %>
+
+<% @content.tags.each do |t| %>
+  <%= t.name %>
+<% end %>
+
+
