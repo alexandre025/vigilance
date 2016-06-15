@@ -25,7 +25,12 @@
         </span>
         <ul>
           <li>
-            <a href="<%= organization_content_to_read_path(content.organization, content) %>" class="follow_unfollow <%= 'active' if ContentsSaved.is_saved_to_read?(content,current_user) %>" data-remote="true" data-method="post">
+            <a href="<%= organization_content_like_path(content.organization, content) %>" class="like <%= 'active' if ContentsSaved.is_liked?(content,current_user) %>" data-remote="true" data-method="post">
+              <i class="material-icons">favorite_border</i>
+            </a>
+          </li>
+          <li>
+            <a href="<%= organization_content_to_read_path(content.organization, content) %>" class="to_read <%= 'active' if ContentsSaved.is_saved_to_read?(content,current_user) %>" data-remote="true" data-method="post">
               <i class="material-icons">history</i>
             </a>
           </li>

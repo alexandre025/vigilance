@@ -113,7 +113,7 @@
                 line-height: 34px;
                 font-size: 25px;
               }
-              &.follow_unfollow {
+              &.to_read, &.like {
                 color: $black;
                 &.active {
                   i {

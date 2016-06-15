@@ -26,8 +26,13 @@ $(document).on('page:change', function(){
         itemSelector: ".grid-item"
     });
 
-    $(".follow_unfollow ").on('click',function (e) {
+    $(".to_read").on('click',function (e) {
        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+
+    $(".like").on('click',function (e) {
+        e.preventDefault();
         $(this).toggleClass('active');
     });
 });
