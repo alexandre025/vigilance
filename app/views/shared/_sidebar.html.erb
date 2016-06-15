@@ -2,7 +2,7 @@
 
     <div id="sidebar" class="col-sm-3 col-md-2 hidden-xs sidebar">
       <ul>
-        <% current_user.organizations.each do |o| %>
+        <% Organization.by_assignments(current_user).each do |o| %>
             <li>
               <div class="title <%= 'active' if o == @organization %>">
                 <%= link_to o.name, organization_path(o), class: 'title' %>
