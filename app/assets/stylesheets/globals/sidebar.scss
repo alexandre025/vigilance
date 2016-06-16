@@ -8,6 +8,7 @@
 
   ul {
     li {
+
       div.title {
         height: 40px;
         background-color: $sidebar-second;
@@ -44,9 +45,18 @@
             top: 0;
             line-height: 40px;
             width: 40px;
+
+            &:hover{
+              i{
+                color: $blue;
+              }
+            }
+
             i{
               font-size:18px;
               line-height: 40px;
+              -webkit-transition: color 0.3s;
+              transition: color 0.3s;
             }
           }
         }
@@ -61,6 +71,13 @@
           line-height: 40px;
           height: 40px;
           color: $white;
+          -webkit-transition: color 0.3s, background-color 0.3s;
+          transition: color 0.3s, background-color 0.3s;
+
+          &.active, &:hover{
+            color: $sidebar-primary;
+            background-color: $white;
+          }
         }
       }
     }

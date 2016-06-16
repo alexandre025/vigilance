@@ -122,6 +122,13 @@
               }
               &.to_read {
                 color: $black;
+
+                &:hover{
+                  i {
+                    color: $to-read-active;
+                  }
+                }
+
                 &.active {
                   i {
                     color: $to-read-active;
@@ -130,6 +137,12 @@
               }
               &.like {
                 color: $black;
+
+                &:hover{
+                  i {
+                    color: $pink;
+                  }
+                }
 
                 &.active {
                   i {

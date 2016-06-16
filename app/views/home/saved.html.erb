@@ -2,6 +2,6 @@
     <%= render partial: 'shared/header', locals: {current: :saved_contents} %>
 <% end %>
 
-<h2><%= t('saved_to_read') %></h2>
+<h2 class="title-uppercase"><%= t('saved_to_read') %></h2>
 
 <%= render partial: 'shared/contents', locals: {contents: current_user.contents_saveds.where(relation: :to_read).map { |c| c.content }} %>

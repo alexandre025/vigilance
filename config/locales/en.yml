@@ -25,7 +25,7 @@ en:
   sign_out: "Sign out"
   remember_me: "Remember me"
   organization_new_submit: "Create new organization"
-  organization_edit_submit: "Edit organization"
+  organization_edit_submit: "Change name"
   search: "Search"
   organization:
     user_already_invited: "This user is already invited or in this group"
@@ -51,6 +51,8 @@ en:
       lastname: "Lastname"
     content:
       source: "Source URL"
+      title: "This content is automatically generated but feel free to custom it"
+      description: "This content is automatically generated but feel free to custom it"
     new_organization:
       name: "New organization name"
     add_user:

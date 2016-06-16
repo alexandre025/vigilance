@@ -6,6 +6,7 @@
   background-color: $background;
   background-image: url(image_path('background.png'));
   max-width: calc(100% - 200px);
+  padding-bottom:40px;
 
   .no-contents {
     width: 250px;

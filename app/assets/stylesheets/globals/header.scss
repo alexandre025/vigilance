@@ -66,21 +66,19 @@ header {
         text-decoration: none;
         color: $white;
         font-size:14px;
+        -webkit-transition: color 0.4s;
+        transition: color 0.4s;
 
         &:hover{
           color:$blue;
         }
 
         i {
-          color:$white;
-
           &.material-icons {
             position: relative;
             top: 2px;
             font-size:14px;
             margin-right:4px;
-            -webkit-transition: color 0.4s;
-            transition: color 0.4s;
           }
 
         }
