@@ -29,7 +29,7 @@ $(document).on('page:change', function () {
         itemSelector: ".grid-item"
     });
 
-    $('.to_read').on('click', function (e) {
+    $('.to_read, .like-content, .article-footer .later').on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
     });
@@ -50,10 +50,6 @@ $(document).on('page:change', function () {
         $(this).parent().hide();
     });
 
-    $('.article-footer .later').on('click', function (e) {
-        e.preventDefault();
-        $(this).toggleClass('active');
-    });
 });
 
 
