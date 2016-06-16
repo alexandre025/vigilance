@@ -49,6 +49,30 @@
           font-weight: 700;
         }
       }
+      .content-header-link:hover ~ .content-edit {
+        display:block;
+      }
+
+      .content-edit {
+        display: none;
+        position:absolute;
+        top:14px;
+        right:18px;
+
+        &:hover{
+          display:block;
+          
+          i{
+            color: $blue;
+          }
+        }
+
+        i{
+          color:rgba(233,236,241,1);
+          -webkit-transition: color 0.3s;
+          transition: color 0.3s;
+        }
+      }
       .content-description {
         height: 120px;
         width: 100%;

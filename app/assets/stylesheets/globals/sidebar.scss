@@ -95,11 +95,11 @@
     transition: height 0.3s;
 
     &:hover{
-      height: 50px;
+      height: 54px;
 
       a{
         i{
-          line-height: 50px;
+          line-height: 54px;
         }
       }
     }
@@ -113,8 +113,9 @@
         color: $white;
         line-height: 40px;
         font-size: 24px;
-        -webkit-transition: line-height 0.3s;
-        transition: line-height 0.3s;
+        transition-delay: 0.1s;
+        -webkit-transition: line-height 0.2s;
+        transition: line-height 0.2s;
       }
     }
   }

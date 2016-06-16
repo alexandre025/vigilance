@@ -41,7 +41,7 @@ en:
       :2: "Unavoidable"
     access_source: "Read the original article"
     read_lated: "Read later"
-    delete: "Delete article"
+    delete: "Delete"
   placeholder:
     login:
       email: "Email address"

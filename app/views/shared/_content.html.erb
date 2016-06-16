@@ -1,11 +1,12 @@
 <% if content %>
     <div id="content_<%= content.id %>" class="grid-item">
-      <a href="<%= organization_content_path(content.organization, content) %>">
+      <a class="content-header-link" href="<%= organization_content_path(content.organization, content) %>">
         <div class="content-header" style="background-image: url('<%= content.try(:image_url).try(:html_safe) %>');background-position: center center;background-repeat: no-repeat;background-size:cover;">
           <%= content_tag :span ,content.try(:title), class: 'content-title' %>
           <%= content_tag :span, t(:'content.created_by', name: "#{content.user.firstname} #{content.user.lastname}"), class: 'content-author' %>
         </div>
       </a>
+      <a class="content-edit" href="<%= edit_organization_content_path(content.organization,content) %>"><i class="material-icons">create</i></a>
       <div class="content-description">
         <%= content_tag :p, content.try(:description).try(:html_safe) %>
       </div>

@@ -17,13 +17,13 @@ header {
 
   .navbar-header {
     float: left;
-    padding-left: 50px;
+    padding-left: 78px;
 
     a {
       img {
-        height: 50px;
+        height: 48px;
         position: relative;
-        top: 5px;
+        top: 6px;
       }
     }
   }
@@ -31,10 +31,11 @@ header {
   form {
     height: 60px;
     position: absolute;
-    margin-left: 100px;
+    margin-left: 86px;
     &.navbar-form {
       input[type=text] {
         padding-left: 20px;
+        padding-right: 35px;
         height: 34px;
         width: 350px;
         background: $white;
@@ -44,6 +45,21 @@ header {
           outline: none;
         }
       }
+
+      .form-group {
+        position:relative;
+
+        i{
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -40%);
+          transform: translate(0, -40%);
+          right:10px;
+          color:$gray;
+          font-size:20px;
+        }
+      }
+      
     }
   }
 
