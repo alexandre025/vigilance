@@ -20,8 +20,11 @@ header {
     padding-left: 50px;
 
     a {
-      color: $white;
-      text-decoration: none;
+      img {
+        height: 50px;
+        position: relative;
+        top: 5px;
+      }
     }
   }
 
