@@ -78,7 +78,7 @@ class ContentsController < ApplicationController
 
   def like
     if ContentsSaved.is_liked?(@content, current_user)
-      ContentsSaved.destroy(ContentsSaved.find(content: @content, user: current_user, relation: :liked))
+      ContentsSaved.destroy(ContentsSaved.find_by(content: @content, user: current_user, relation: :liked))
     else
       ContentsSaved.create(content: @content, user: current_user, relation: :liked)
     end
