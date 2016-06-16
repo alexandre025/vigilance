@@ -28,7 +28,7 @@
 
   /* If user isn't logged */
   &.without-bar {
-    background-image: url(image_path('background.png'));
+    background-image: url(image_url('background.png'));
     left: 0;
     top: 0;
     max-width: 100%;

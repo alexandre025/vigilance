@@ -25,8 +25,8 @@ namespace :deploy do
       within release_path do
         execute :bundle, :install
         execute :rails, 'db:migrate RAILS_ENV="production"'
-        execute :rails, 'assets:precompile'
-        execute :rails, 'tmp:cache:clear'
+        execute :rails, 'assets:precompile RAILS_ENV="production"'
+        execute :rails, 'tmp:cache:clear RAILS_ENV="production"'
         #execute :rails, 's -e production -d -b localhost'
       end
     end
