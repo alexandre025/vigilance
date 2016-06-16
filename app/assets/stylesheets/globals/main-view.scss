@@ -3,16 +3,14 @@
   position: relative;
   left: 200px;
   top: 60px;
-  background-color: $background;
-  background-image: url(image_path('background.png'));
+  background: $background url(image_path('background.png'));
   max-width: calc(100% - 200px);
   padding-bottom:40px;
 
   .no-contents {
     width: 250px;
-    margin: 0 auto;
     display: block;
-    margin-top: 150px;
+    margin: 150px auto 0;
   }
 
 
