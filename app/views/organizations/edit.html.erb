@@ -8,23 +8,27 @@
 
 <h3>Editing tags</h3>
 
-<% @organization.tags.each do |t| %>
-    <span class="organization-tag tag">
-      <%= t.name %>
-      <%= link_to content_tag(:i,'close',class:'material-icons'), organization_tag_path(@organization, t), method: :delete, data: {confirm: 'Are you sure?'} %>
-    </span>
-<% end %>
+<div class="list">
+  <% @organization.tags.each do |t| %>
+      <span class="organization-tag tag">
+        <%= t.name %>
+        <%= link_to content_tag(:i,'close',class:'material-icons'), organization_tag_path(@organization, t), method: :delete, data: {confirm: 'Are you sure?'} %>
+      </span>
+  <% end %>
+</div>
 
 <%= render 'tags/form', tag: Tag.new %>
 
 <h3>Editing Users</h3>
 
-<% @organization.assignments.each do |a| %>
-    <span class="organization-user tag">
-      <%= "#{a.user.firstname} #{a.user.lastname}" %>
-      <%= link_to content_tag(:i,'close',class:'material-icons'), organization_delete_assignment_path(@organization, a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
-    </span>
-<% end %>
+<div class="list">
+  <% @organization.assignments.each do |a| %>
+      <span class="organization-user tag">
+        <%= "#{a.user.firstname} #{a.user.lastname}" %>
+        <%= link_to content_tag(:i,'close', class:'material-icons after-input'), organization_delete_assignment_path(@organization, a), method: :delete, data: {confirm: 'Are you sure?'} unless a.user == current_user %>
+      </span>
+  <% end %>
+</div>
 
 <%= form_tag organization_invit_path(@organization), method: :post do %>
     <div class="form-group">

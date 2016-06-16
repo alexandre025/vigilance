@@ -189,27 +189,8 @@
 
 #contents_edit {
 
-  input[type="submit"]{
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .delete{
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    height: 45px;
-    line-height: 45px;
-    min-width: 195px;
-    padding: 0px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size:11px;
-    color: $submit-text;
-    background-color: $red;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
+  .form-group-submit{
+    width: auto;
   }
 
 }

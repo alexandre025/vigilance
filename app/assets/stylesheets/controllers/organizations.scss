@@ -8,17 +8,91 @@
 
 #organizations_edit {
 
-	.form-group {
-		width: auto;
-	}
+	.main-view{
 
-	label {
-		display:block;
-	}
+		#edit_organization_1{
+			margin-top:40px;
+		}
 
-	input {
-		display:inline-block;
-		vertical-align:middle;
+		.form-group{
+			width: auto;
+			display:inline-block;
+			vertical-align:bottom;
+		}
+
+		form{
+			.form-group{
+			    margin-top:0;
+			}
+		}
+
+
+		label{
+			display:block;
+		}
+
+		input{
+			display:inline-block;
+			vertical-align:bottom;
+		}
+
+		h3{
+	        font-weight: 700;
+	        font-size: 18px;
+	        color: $black;
+	        line-height: 29px;
+	        margin-top: 40px;
+	        margin-left: 80px;
+		}
+
+		.list{
+			margin-top:16px;
+			margin-left: 80px;
+		    width: 560px;
+
+		    span{
+		    	display:inline-block;
+		    	vertical-align:middle;
+		    	border: 1px solid $blue;
+		    	border-radius: 40px;
+		    	height:26px;
+		    	line-height:26px;
+		    	font-size:12px;
+		    	color:$blue;
+		    	margin-bottom:5px;
+		    	padding:0 15px;
+		    	padding-right:10px;
+
+		    	a{
+		    	    display: inline-block;
+				    vertical-align: middle;
+				    height: 22px;
+		    	}
+
+		    	i{
+					font-size:14px;
+					color:$blue;
+		    	}
+		    }
+		}
+
+		.after-input, input[type="submit"]{
+			display:inline-block;
+			vertical-align:bottom;
+			background:none;
+			border: 1px solid $blue;
+			height:35px;
+			min-width:140px;
+			margin-left:20px;
+			color:$blue;
+			-webkit-transition: background-color 0.3s, color 0.3s;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover{
+				background-color:$blue;
+				color:$white;
+			}
+		}
 	}
 	
 }
