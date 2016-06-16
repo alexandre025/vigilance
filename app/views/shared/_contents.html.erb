@@ -1,5 +1,10 @@
 <div class="grid">
-  <% contents.each do |c| %>
-      <%= render partial: 'shared/content', locals: {content: c} %>
+
+  <% if contents.blank? %>
+    <%= image_tag :smileybad, class: 'no-contents' %>
+  <% else %>
+      <% contents.each do |c| %>
+          <%= render partial: 'shared/content', locals: {content: c} %>
+      <% end %>
   <% end %>
 </div>
