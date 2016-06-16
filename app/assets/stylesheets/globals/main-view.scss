@@ -3,7 +3,7 @@
   position: relative;
   left: 200px;
   top: 60px;
-  background: $background url(image_path('background.png'));
+  background: $background;
   max-width: calc(100% - 200px);
   padding-bottom:40px;
 
@@ -28,9 +28,20 @@
 
   /* If user isn't logged */
   &.without-bar {
+    background-image: url(image_path('background.png'));
     left: 0;
     top: 0;
     max-width: 100%;
+
+    .logo {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+
+      img{
+        width: 55px;
+      }
+    }
 
     h1, h2 {
       padding: 0;

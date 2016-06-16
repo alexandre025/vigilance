@@ -12,6 +12,8 @@
 <div class="container">
   <%= render partial: 'shared/sidebar' %>
   <div class="main-view <%= user_signed_in? ? 'logged-in' : 'without-bar' %>">
+    <%= link_to image_tag(:logo), root_path, class: 'logo' unless user_signed_in? %>
+
     <%= render partial: 'shared/notifications' %>
     <%= yield %>
   </div>
