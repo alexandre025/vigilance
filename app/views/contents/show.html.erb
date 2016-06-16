@@ -30,7 +30,7 @@
   <div class="article-footer">
     <a class="later btn <%= 'active' if ContentsSaved.is_saved_to_read?(@content, current_user)%>" href="<%= organization_content_to_read_path(@organization, @content) %>" data-method="post" data-remote="true"><%= t('content.read_lated') %></a>
     <a class="like-content <%= 'active' if ContentsSaved.is_liked?(@content, current_user) %>" href="<%= organization_content_like_path(@organization, @content) %>" data-method="post" data-remote="true">
-      <p>Likez</p>
+      <p>Like</p>
       <div class="like-btn">
         <span class="counter"></span>
         <i class="material-icons">favorite</i>

@@ -62,11 +62,22 @@ header {
         display: inline-block;
         text-decoration: none;
         color: $white;
+        font-size:14px;
+
+        &:hover{
+          color:$blue;
+        }
 
         i {
+          color:$white;
+
           &.material-icons {
             position: relative;
-            top: 6px;
+            top: 2px;
+            font-size:14px;
+            margin-right:4px;
+            -webkit-transition: color 0.4s;
+            transition: color 0.4s;
           }
 
         }

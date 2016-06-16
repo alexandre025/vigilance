@@ -144,6 +144,13 @@
           display: inline-block;
           vertical-align: middle;
           color: $black-o5;
+          text-decoration: none;
+          -webkit-transition: color 0.4s;
+          transition: color 0.4s;
+
+          &:hover {
+            color: $pink;
+          }
 
           p {
             font-size: 12px;
