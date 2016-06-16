@@ -2,11 +2,13 @@
     <div id="content_<%= content.id %>" class="grid-item">
       <a class="content-header-link" href="<%= organization_content_path(content.organization, content) %>">
         <div class="content-header" style="background-image: url('<%= content.try(:image_url).try(:html_safe) %>');background-position: center center;background-repeat: no-repeat;background-size:cover;">
-          <%= content_tag :span ,content.try(:title), class: 'content-title' %>
+          <%= content_tag :span, content.try(:title), class: 'content-title' %>
           <%= content_tag :span, t(:'content.created_by', name: "#{content.user.firstname} #{content.user.lastname}"), class: 'content-author' %>
         </div>
       </a>
-      <a class="content-edit" href="<%= edit_organization_content_path(content.organization,content) %>"><i class="material-icons">create</i></a>
+      <% if can? :update, content %>
+          <a class="content-edit" href="<%= edit_organization_content_path(content.organization, content) %>"><i class="material-icons">create</i></a>
+      <% end %>
       <div class="content-description">
         <%= content_tag :p, content.try(:description).try(:html_safe) %>
       </div>
@@ -23,17 +25,17 @@
           <% if @organization %>
 
           <% else %>
-              <%= t('from',f: content.organization.name) %>
+              <%= t('from', f: content.organization.name) %>
           <% end %>
         </span>
         <ul>
           <li>
-            <a href="<%= organization_content_like_path(content.organization, content) %>" class="like <%= 'active' if ContentsSaved.is_liked?(content,current_user) %>" data-remote="true" data-method="post">
-              <i class="material-icons"><%= ContentsSaved.is_liked?(content, current_user) ? 'favorite' : 'favorite_border'%></i>
+            <a href="<%= organization_content_like_path(content.organization, content) %>" class="like <%= 'active' if ContentsSaved.is_liked?(content, current_user) %>" data-remote="true" data-method="post">
+              <i class="material-icons"><%= ContentsSaved.is_liked?(content, current_user) ? 'favorite' : 'favorite_border' %></i>
             </a>
           </li>
           <li>
-            <a href="<%= organization_content_to_read_path(content.organization, content) %>" class="to_read <%= 'active' if ContentsSaved.is_saved_to_read?(content,current_user) %>" data-remote="true" data-method="post">
+            <a href="<%= organization_content_to_read_path(content.organization, content) %>" class="to_read <%= 'active' if ContentsSaved.is_saved_to_read?(content, current_user) %>" data-remote="true" data-method="post">
               <i class="material-icons">access_time</i>
             </a>
           </li>
