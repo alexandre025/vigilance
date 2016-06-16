@@ -8,7 +8,7 @@
     <h2 class="article-title"><%= @content.title %></h2>
     <p class="article-date">
       <i class="material-icons">query_builder</i>
-      <%= @content.created_at %>
+      <%= @content.created_at.to_date %>
     </p>
     <div class="article-tags">
       <% @content.tags.each do |t| %>
