@@ -4,6 +4,7 @@
   left: 200px;
   top: 60px;
   background-color: $background;
+  background-image: url(image_path('background.png'));
   max-width: calc(100% - 200px);
 
   .no-contents {
