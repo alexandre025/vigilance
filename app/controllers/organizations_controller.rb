@@ -7,6 +7,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations.json
   def index
     @organizations = Organization.by_assignments(current_user)
+    @contents = Content.accessible(@organization)
   end
 
   # GET /organizations/1
