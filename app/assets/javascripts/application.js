@@ -36,7 +36,13 @@ $(document).on('page:change', function () {
 
     $('.like').on('click', function (e) {
         e.preventDefault();
-        $(this).toggleClass('active');
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).children().first().text("favorite_border");
+        } else {
+            $(this).addClass('active');
+            $(this).children().first().text('favorite');
+        }
     });
 
     $('.alert i').on('click', function (e) {

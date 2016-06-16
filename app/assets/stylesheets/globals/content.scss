@@ -113,11 +113,19 @@
                 line-height: 34px;
                 font-size: 25px;
               }
-              &.to_read, &.like {
+              &.to_read {
                 color: $black;
                 &.active {
                   i {
                     color: $to-read-active;
+                  }
+                }
+              }
+              &.like {
+                color: $black;
+                &.active {
+                  i {
+                    color: $pink;
                   }
                 }
               }

@@ -26,7 +26,7 @@
         <ul>
           <li>
             <a href="<%= organization_content_like_path(content.organization, content) %>" class="like <%= 'active' if ContentsSaved.is_liked?(content,current_user) %>" data-remote="true" data-method="post">
-              <i class="material-icons">favorite_border</i>
+              <i class="material-icons"><%= ContentsSaved.is_liked?(content, current_user) ? 'favorite' : 'favorite_border'%></i>
             </a>
           </li>
           <li>
