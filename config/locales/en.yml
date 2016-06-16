@@ -39,6 +39,8 @@ en:
       :0: "Interesting"
       :1: "To read"
       :2: "Unavoidable"
+    access_source: "Read the original article"
+    read_lated: "Read later"
   placeholder:
     login:
       email: "Email address"

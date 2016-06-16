@@ -4,42 +4,42 @@
 
 <div class="article">
 
-	<div class="article-header">
-		<h2 class="article-title"><%= @content.title %></h2>
-		<p class="article-date">
-			<i class="material-icons">query_builder</i>
-			<%= @content.created_at %>
-		</p>
-		<div class="article-tags">
-			<% @content.tags.each do |t| %>
-			  <span class="tag"><%= t.name %></span>
-			<% end %>
-		</div>
+  <div class="article-header">
+    <h2 class="article-title"><%= @content.title %></h2>
+    <p class="article-date">
+      <i class="material-icons">query_builder</i>
+      <%= @content.created_at %>
+    </p>
+    <div class="article-tags">
+      <% @content.tags.each do |t| %>
+          <span class="tag"><%= t.name %></span>
+      <% end %>
+    </div>
 
-		<div class="article-importance">
-			<span><%= t(:"content.importance.#{@content.importance}")%></span>
-		</div>
-	</div>
+    <div class="article-importance">
+      <span><%= t(:"content.importance.#{@content.importance}") %></span>
+    </div>
+  </div>
 
-	<p class="article-description"><%= @content.description %></p>
+  <p class="article-description"><%= @content.description %></p>
 
-	<div class="article-image" style="background-image: url('<%= @content.try(:image_url).try(:html_safe) %>');background-position: center center;background-repeat: no-repeat;background-size:cover;"></div>
+  <div class="article-image" style="background-image: url('<%= @content.try(:image_url).try(:html_safe) %>');background-position: center center;background-repeat: no-repeat;background-size:cover;"></div>
 
-	<p class="article-comment"><%= @content.comment %></p>
+  <p class="article-comment"><%= @content.comment %></p>
 
-	<div class="article-footer">
-		<button class="later">Lire plus tard</button>
-		<div class="like">
-			<p>Likez</p>
-			<div class="like-btn">
-				<span>4</span>
-				<i class="material-icons">favorite</i>
-			</div>
-		</div>
-		<button class="go">Accéder à l'article</button>
-	</div>
+  <div class="article-footer">
+    <a class="later <%= 'active' if ContentsSaved.is_saved_to_read?(@content, current_user)%>" href="<%= organization_content_to_read_path(@organization, @content) %>" data-method="post" data-remote="true"><%= t('content.read_lated') %></a>
+    <div class="like">
+      <p>Likez</p>
+      <div class="like-btn">
+        <span>4</span>
+        <i class="material-icons">favorite</i>
+      </div>
+    </div>
+    <a class="go" href="<%= @content.source %>" target="_blank"><%= t('content.access_source') %></a>
+  </div>
 
-	<!-- <%= @organization.name %> -->
+  <!-- <%= @organization.name %> -->
 </div>
 
 

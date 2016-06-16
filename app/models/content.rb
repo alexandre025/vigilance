@@ -22,7 +22,7 @@ class Content < ApplicationRecord
   after_save do
     if title.blank? || description.blank? || image_url.blank?
       page = MetaInspector.new(source)
-      update_attributes(title: page.title) if title.blank? && !page.title.blank?
+      update_attributes(title: page.title.delete!("\n").strip) if title.blank? && !page.title.blank?
       update_attributes(description: page.description) if description.blank? && !page.description.blank?
       update_attributes(image_url: page.images.best) if image_url.blank? && !page.images.best.blank?
     end

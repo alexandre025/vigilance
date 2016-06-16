@@ -19,30 +19,34 @@
 Turbolinks.enableProgressBar();
 
 $(document).on('page:change', function () {
-    $("select.select2").select2();
+    $('select.select2').select2();
 
-    $("select.select2-no-search").select2({
+    $('select.select2-no-search').select2({
         minimumResultsForSearch: Infinity
     });
 
-
-    $(".grid").masonry({
+    $('.grid').masonry({
         itemSelector: ".grid-item"
     });
 
-    $(".to_read").on('click', function (e) {
+    $('.to_read').on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
     });
 
-    $(".like").on('click', function (e) {
+    $('.like').on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
     });
 
-    $(".alert i").on('click', function (e) {
+    $('.alert i').on('click', function (e) {
         e.preventDefault();
         $(this).parent().hide();
+    });
+
+    $('.article-footer .later').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
     });
 });
 
