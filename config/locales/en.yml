@@ -32,7 +32,7 @@ en:
     invit_email_sent: "An email has been sent to this user"
     invit_user_not_found: "No user match with the provided email"
     add_user:
-      submit: "Invit an user"
+      submit: "Invite an user"
   content:
     created_by: "By %{name}"
     importance:
@@ -51,7 +51,7 @@ en:
     content:
       source: "Source URL"
     new_organization:
-      name: "New orgnization name"
+      name: "New organization name"
     add_user:
       email: "User's registred email"
     new_tag:

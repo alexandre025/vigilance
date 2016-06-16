@@ -15,6 +15,10 @@
     padding-left: 80px;
   }
 
+  .title-uppercase {
+    text-transform: uppercase;
+  }
+
   /* If user isn't logged */
   &.without-bar {
     left: 0;

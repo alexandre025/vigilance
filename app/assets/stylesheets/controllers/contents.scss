@@ -50,7 +50,7 @@
             color: $black-o5;
             border-radius: 40px;
             height: 18px;
-            line-height: 18px;
+            line-height: 17px;
             font-size: 12px;
             margin-left: 5px;
             padding: 0px 10px;
@@ -64,8 +64,18 @@
         .article-importance {
           color: $black-o5;
           margin-top: 12px;
-          font-size: 12px;
+          font-size: 14px;
           line-height: 18px;
+
+          &::before, &::after {
+            position: relative;
+            top: -3px;
+            content: '';
+            display: inline-block;
+            width: 21px;
+            height: 1px;
+            background-color: $black-o5;
+          }
         }
 
       }
@@ -110,6 +120,8 @@
           cursor: pointer;
           font-size: 12px;
           outline: none;
+          -webkit-transition: color 0.3s, background-color 0.3s;
+          transition: color 0.3s, background-color 0.3s;
 
           &:hover {
             background-color: $submit-background;

@@ -16,10 +16,15 @@
         position: relative;
         padding: 18px;
         border-radius: 2px 2px 0px 0px;
-
         box-shadow: inset 0px -75px 40px -15px rgba(0, 0, 0, 0.5);
+        -webkit-transition: box-shadow 0.4s;
+        transition: box-shadow 0.4s;
 
-        a {
+        &:hover {
+          box-shadow: inset 0px -75px 40px -10px rgba(0, 0, 0, 0.7);
+        }
+
+        span {
           &.content-title {
             color: $white;
             font-size: 24px;
@@ -71,7 +76,7 @@
           color: $black-o5;
           border-radius: 40px;
           height: 18px;
-          line-height: 18px;
+          line-height: 17px;
           font-size: 12px;
           padding: 0px 10px;
         }
@@ -80,7 +85,7 @@
         padding: 0px 0px 15px 15px;
         &::before {
           position: relative;
-          top: -2px;
+          top: -3px;
           content: '';
           display: inline-block;
           width: 21px;
@@ -89,7 +94,7 @@
         }
         span {
           display: inline-block;
-          font-size: 9px;
+          font-size: 11px;
           color: $black;
           line-height: 11px;
         }
@@ -112,6 +117,8 @@
               i {
                 line-height: 34px;
                 font-size: 25px;
+                -webkit-transition: color 0.2s;
+                transition: color 0.2s;
               }
               &.to_read {
                 color: $black;
@@ -123,6 +130,7 @@
               }
               &.like {
                 color: $black;
+
                 &.active {
                   i {
                     color: $pink;
