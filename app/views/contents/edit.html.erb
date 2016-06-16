@@ -5,5 +5,3 @@
 <h1>Editing Content</h1>
 
 <%= render 'form', content: @content %>
-
-<%= link_to t('content.delete'), organization_content_path(@content.organization, @content), method: :delete, data: {confirm: "Are you sure?"} %>

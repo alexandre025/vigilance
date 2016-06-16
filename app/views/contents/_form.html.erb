@@ -44,4 +44,7 @@
     <div class="form-group">
       <%= f.submit %>
     </div>
+
+
+    <%= link_to t('content.delete'), organization_content_path(@content.organization, @content), method: :delete, data: {confirm: "Are you sure?"} unless content.new_record? %>
 <% end %>
