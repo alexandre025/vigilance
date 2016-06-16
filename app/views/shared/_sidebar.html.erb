@@ -13,7 +13,9 @@
               <ul>
                 <% o.tags.each do |t| %>
                     <li>
-                      <%= link_to t.name, organization_tag_path(o, t), class: 'tag' %>
+                      <% classes = ['tag'] %>
+                      <% classes << 'active' if t == @tag %>
+                      <%= link_to t.name, organization_tag_path(o, t), class: classes %>
                     </li>
                 <% end %>
               </ul>
