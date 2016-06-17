@@ -51,7 +51,7 @@ en:
       lastname: "Lastname"
     content:
       source: "Source URL"
-      title: "This content is automatically generated but feel free to custom it"
+      title: "This content is automatically generated"
       description: "This content is automatically generated but feel free to custom it"
     new_organization:
       name: "New organization name"
