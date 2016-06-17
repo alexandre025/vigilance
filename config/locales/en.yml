@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   app_title: "Readis"
-  sign_out: "Sign out"
+  sign_out: "Logout"
   remember_me: "Remember me"
   organization_new_submit: "Create new organization"
   organization_edit_submit: "Change name"

@@ -72,6 +72,16 @@
 		    	i{
 					font-size:14px;
 					color:$blue;
+                  //vertical-align: middle;
+                  margin-left: 0;
+                  height: 14px;
+                  vertical-align: initial;
+                  border: none;
+                  min-width: 0px;
+                  &:hover{
+                    background-color: initial;
+                    color: $blue;
+                  }
 		    	}
 		    }
 		}
