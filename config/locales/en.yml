@@ -61,19 +61,19 @@ en:
       name: "New tag name"
   login:
     welcome: "Nice to see you !"
-    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    welcome_message: ""
     signup:
       link: "Don't have an account? Get Started"
   new_password:
     welcome: "Enter your email adress and we’ll get you back on track"
-    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    welcome_message: "You will receive an email in few minutes with a reset password link."
   back_to_login: "Go back to login"
   edit_password:
     welcome: "Change your password"
-    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    welcome_message: "Choose a secure new password."
   new_registration:
     welcome: "You’re most welcome here ! :)"
-    welcome_message: "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    welcome_message: "It just takes few seconds to put you on the rails."
   search_results: "Search results for '%{keywords}'"
   from: "From %{f}"
   saved_contents: "Saved contents"
